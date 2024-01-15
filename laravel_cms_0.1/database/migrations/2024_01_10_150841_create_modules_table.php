@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
+            $table->string('slug');
             $table->string('controller');
             $table->string('label');
-            $table->string('ord');
+            $table->integer('ord');
+            $table->boolean('status');
+            $table->boolean('main');
 
             $table->timestamps();
         });

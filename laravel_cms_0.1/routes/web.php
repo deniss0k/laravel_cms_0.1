@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Module;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+$modules = Module::all();
+
+foreach ($modules as $module) {
+    $controllerName = $module->controller;
+    $methodName = 'index'; // Или другой метод, в зависимости от логики вашего приложения
+
+    Route::get("adm/$module->slug", "$controllerName@$methodName")->name($module->name);
+}
