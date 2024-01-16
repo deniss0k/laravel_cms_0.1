@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Module;
+use App\Models\Section;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+$ADMIN_FOLDER = config('constants.ADMIN_FOLDER');
+
+Route::prefix($ADMIN_FOLDER)->group(function () {
+
+    $modules = Module::all();
+
+    foreach ($modules as $module) {
+        if ($module->main === 1) {
+            Route::get("/", "App\Http\Controllers\Admin\\$module->controller@index")->name($module->name);
+        }
+        Route::get("/$module->slug", "App\Http\Controllers\Admin\\$module->controller@index")->name($module->name);
+    }
 });
 
-$modules = Module::all();
+$sections = Section::all();
 
-foreach ($modules as $module) {
-    $controllerName = $module->controller;
-    $methodName = 'index'; // Или другой метод, в зависимости от логики вашего приложения
-
-    Route::get("adm/$module->slug", "$controllerName@$methodName")->name($module->name);
+foreach ($sections as $section) {
+    if ($section->main === 1) {
+        Route::get("/", "App\Http\Controllers\Site\\$section->controller@index")->name($section->name);
+    }
+    Route::get("$section->slug", "App\Http\Controllers\Site\\$section->controller@index")->name($section->name);
 }
