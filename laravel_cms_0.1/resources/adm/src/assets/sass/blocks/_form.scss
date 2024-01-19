@@ -1,0 +1,37 @@
+.form__group {
+  margin-bottom: 2rem;
+}
+
+
+.form__inline {
+  display: flex;
+  margin: 0 -1.5rem;
+
+
+  .form__group {
+    width: 50%;
+    padding: 0 1.5rem;
+  }
+}
+
+
+.form__row {
+  display: flex;
+  margin: 0 -1rem;
+}
+
+.form__block {
+  width: 33.33%;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.page__form {
+}
+
+
+.form__title {
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}

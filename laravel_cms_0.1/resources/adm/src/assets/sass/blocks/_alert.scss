@@ -1,0 +1,86 @@
+/* 17. Alerts
+=========================*/
+$alert-margin-bottom: 1rem;
+$alert-padding: 1em 1.5em;
+$alert-font-size: .9em;
+$alert-line-height: 1.2;
+$alert-default-bg: $white;
+$alert-default-color: $black;
+$alert-default-border-width: 1px;
+
+$alert-close-color: inherit;
+$alert-close-font-size: 1em;
+$alert-close-line-height: 1;
+$alert-close-top: .3em;
+$alert-close-right: .5em;
+$alert-close-zindex: 1;
+
+/* Styling */
+$alert-rounded: .3em;
+$alert-shadow: 0 0 .3em currentColor;
+
+
+.alert {
+  padding: $alert-padding;
+  margin-bottom: $alert-margin-bottom;
+
+  font-size: 1.5rem;
+  line-height: $alert-line-height;
+
+  position: relative;
+
+  background-color: $alert-default-bg;
+  color: $alert-default-color;
+  border-radius: .6rem;
+
+  p {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &.alert__text {
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Colors */
+  @include alert;
+
+  /* Border */
+  @include alert-outline;
+
+  /* Styling */
+  &--rounded {
+    border-radius: $alert-rounded;
+  }
+
+  &--shadow {
+    box-shadow: $alert-shadow;
+  }
+
+  &--main {
+    color: $white;
+  }
+}
+
+.alert__button {
+  padding: 0;
+
+  background: none;
+  border: 0;
+
+  color: $alert-close-color;
+  line-height: $alert-close-line-height;
+  font-size: $alert-close-font-size;
+
+  position: absolute;
+  top: $alert-close-top;
+  right: $alert-close-right;
+  z-index: $alert-close-zindex;
+
+  &:focus {
+    outline: 0;
+  }
+
+
+}

@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="Colibri"/>
+    <meta property="og:description" content="">
+    <title>Esteriol Admin UI</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="ru"/>
+    <META name="KEYWORDS" content=""/>
+    <META name="TITLE" content="Colibri"/>
+    <META name="DESCRIPTION" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href="/" rel="shortcut icon" type="image/x-icon"/>
+    <!--FONTAWESOME-->
+    <link rel="stylesheet" href="/src/assets/fontawesome/fontawesome.min.css">
+    <!--FONTAWESOME-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.min.js"></script>
+    <script src="/src/assets/js/components/datepicker/datepicker.min.js"></script>
+    <link href="/src/assets/js/components/datepicker/datepicker.min.css" rel="stylesheet" type="text/css">
+
+    <!--SLICK-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <!--SLICK-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.7.0/sweetalert2.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.7.0/sweetalert2.css"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
+    <script src="/build/js/main.js"></script>
+    <link rel="stylesheet" href="/build/css/style.min.css?1610091752">
+</head>
+
+<body class="">
+<svg display="none">
+    <symbol id="check-mark" viewBox="0 0 11 8">
+        <path d="M10.6723 1.87828L4.87231 7.67782C4.44282 8.10739 3.74611 8.10739 3.31621 7.67782L0.322242 4.68363C-0.107414 4.25406 -0.107414 3.55727 0.322242 3.12761C0.751979 2.69788 1.44863 2.69788 1.87818 3.12745L4.09449 5.34379L9.11608 0.322181C9.54582 -0.107556 10.2425 -0.107231 10.6721 0.322181C11.1017 0.751837 11.1017 1.44838 10.6723 1.87828Z"/>
+    </symbol>
+    <symbol id="pencil" viewBox="0 0 10 10">
+        <path d="M0 7.91696V10H2.08304L8.22663 3.85641L6.14359 1.77336L0 7.91696ZM9.83752 2.24552C10.0542 2.02888 10.0542 1.67893 9.83752 1.4623L8.5377 0.162477C8.32107 -0.0541591 7.97111 -0.0541591 7.75448 0.162477L6.73795 1.179L8.821 3.26205L9.83752 2.24552Z"/>
+    </symbol>
+    <symbol id="delete" viewBox="0 0 9 10">
+        <path d="M7.75862 1.03448H5.17241V0.517241C5.17241 0.231552 4.94086 0 4.65517 0H3.62069C3.335 0 3.10345 0.231552 3.10345 0.517241V1.03448H0.517241C0.231552 1.03448 0 1.26603 0 1.55172V2.06897H8.27586V1.55172C8.27586 1.26603 8.04431 1.03448 7.75862 1.03448ZM0.517241 9.48276C0.517241 9.76845 0.748793 10 1.03448 10H7.24138C7.52707 10 7.75862 9.76845 7.75862 9.48276V2.58621H0.517241V9.48276ZM5.68965 4.13793C5.68965 3.85224 5.92121 3.62069 6.2069 3.62069C6.49259 3.62069 6.72414 3.85224 6.72414 4.13793V8.44828C6.72414 8.73397 6.49259 8.96552 6.2069 8.96552C5.92121 8.96552 5.68965 8.73397 5.68965 8.44828V4.13793ZM3.62069 4.13793C3.62069 3.85224 3.85224 3.62069 4.13793 3.62069C4.42362 3.62069 4.65517 3.85224 4.65517 4.13793V8.44828C4.65517 8.73397 4.42362 8.96552 4.13793 8.96552C3.85224 8.96552 3.62069 8.73397 3.62069 8.44828V4.13793ZM1.55172 4.13793C1.55172 3.85224 1.78328 3.62069 2.06897 3.62069C2.35466 3.62069 2.58621 3.85224 2.58621 4.13793V8.44828C2.58621 8.73397 2.35466 8.96552 2.06897 8.96552C1.78328 8.96552 1.55172 8.73397 1.55172 8.44828V4.13793Z"/>
+    </symbol>
+</svg>
+<div class="page">
+
+    <script>
+        $(document).ready(function () {
+            $('.js-menu-btn').on('click', function (e) {
+                e.preventDefault();
+                $(this).toggleClass('active');
+                $('.js-sidebar').toggleClass('opened');
+                $('.js-page-wrapper').toggleClass('full-width');
+            });
+
+
+            $('.js-profile-btn').on('click', function (e) {
+                e.stopPropagation();
+                $('.js-profile-menu').toggleClass('opened');
+            });
+
+            $('body').on('click', function () {
+                $('.js-profile-menu').removeClass('opened');
+            })
+
+
+            if (screen.width < 992) {
+                $('.js-sidebar').removeClass('opened');
+            }
+
+            if (screen.width > 992) {
+                $('.js-header-sidebar').on('mouseover', function () {
+                    $('.js-sidebar').css({
+                        'transform': 'translateX(0)'
+                    });
+                });
+
+                $('.js-header-sidebar').on('mouseleave', function () {
+                    $('.js-sidebar').removeAttr('style');
+                });
+            }
+        });
+    </script>
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__sidebar js-header-sidebar">
+                <a href="#" class="logo">
+                    <img src="/src/assets/images/logo.svg" alt="">
+                </a>
+
+                <a href="#" class="menu__btn js-menu-btn">
+                    <i></i>
+                </a>
+            </div>
+
+            <div class="header__wrapper">
+                <div class="header__search hide-mobile">
+                    <form class="search__form" action="">
+                        <input type="text" class="input" placeholder="Введите запрос">
+                        <button class="search__btn" type="submit">
+                            <img src="/src/assets/images/search.svg" alt="">
+                        </button>
+                    </form>
+                </div>
+
+                <div class="header__profile">
+                    <a href="#" class="profile__btn js-profile-btn">
+                        <img class="profile__img" src="/src/assets/images/profile_img.png" alt="">
+                        Sergejs Gustajevs
+                        <img class="arrow" src="/src/assets/images/arrow.svg" alt="">
+                    </a>
+                    <div class="profile__menu js-profile-menu">
+                        <a href="#" class="profile__menu-link">
+                            <i class="fa fa-list"></i>
+                            Настройки
+                        </a>
+                        <a href="#" class="profile__menu-link">
+                            <i class="fa fa-list"></i>
+                            Настройки
+                        </a>
+                        <a href="#" class="profile__menu-link">
+                            <i class="fa fa-sign-out-alt"></i>
+                            Выйти
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar js-sidebar opened">
+        <div class="sidebar__nav">
+            <div class="sidebar__nav-item">
+                <a href="#">
+                    <i class="fa fa-list"></i>
+                    Сводка
+                </a>
+            </div>
+            <div class="sidebar__nav-item">
+                <a href="#">
+                    <i class="fa fa-picture-o"></i>
+                    Новости
+                </a>
+            </div>
+            <div class="sidebar__nav-item">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    О компании
+                </a>
+            </div>
+            <div class="sidebar__nav-item">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    Каталог
+                </a>
+            </div>
+            <div class="sidebar__nav-item">
+                <a href="#" >
+                    <i class="fa fa-dashboard"></i>
+                    Слайдшоу
+                </a>
+            </div>
+            <div class="sidebar__nav-item">
+                <a href="#" class="active">
+                    <i class="fa fa-dashboard"></i>
+                    Редактор разделов
+                </a>
+            </div>
+            <div class="sidebar__nav-item">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i>
+                    Настройки
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="page__wrapper js-page-wrapper">
+        <div class="block__head">
+            <div>
+                <div class="block__title">
+                    Добавление товара
+                </div>
+                <div class="block__subtitle">
+                    Управление товарами
+                </div>
+            </div>
+        </div>
+        <div class="block__wrapper">
+            <div class="block w-100">
+                <div class="block__item">
+                    <div class="form__row">
+                        <div class="form__block">
+                            <div class="form__title">
+                                Русский
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Заголовок:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Код:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Название 2:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Категория:
+                                </label>
+                                <div class="select">
+                                    <select name="" >
+                                        <option value="">Выберите категорию</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Описание товара:
+                                </label>
+                                <textarea class="ckeditor1"  name=""></textarea>
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Изображение
+                                </label>
+                                <input type="file">
+                            </div>
+                            <div class="form__group">
+                                <div class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="checkbox_1" id="checkbox_1" checked>
+                                    <label class="checkbox__label" for="checkbox_1">
+                                        Статус
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn--main" type="submit">
+                                Добавить
+                            </button>
+                        </div>
+                        <div class="form__block">
+                            <div class="form__title">
+                                Русский
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Заголовок:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Код:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Название 2:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Категория:
+                                </label>
+                                <div class="select">
+                                    <select name="" >
+                                        <option value="">Выберите категорию</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Описание товара:
+                                </label>
+                                <textarea class="ckeditor2"  name=""></textarea>
+
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Изображение
+                                </label>
+                                <input type="file">
+                            </div>
+                            <div class="form__group">
+                                <div class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="checkbox_1" id="checkbox_2" checked>
+                                    <label class="checkbox__label" for="checkbox_2">
+                                        Статус
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button class="btn btn--main" type="submit">
+                                Добавить
+                            </button>
+                        </div>
+                        <div class="form__block">
+                            <div class="form__title">
+                                Русский
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Заголовок:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Код:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Название 2:
+                                </label>
+                                <input type="text" class="input">
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Категория:
+                                </label>
+                                <div class="select">
+                                    <select name="" >
+                                        <option value="">Выберите категорию</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Описание товара:
+                                </label>
+                                <textarea class="ckeditor3"  name=""></textarea>
+
+                            </div>
+                            <div class="form__group">
+                                <label for="" class="label">
+                                    Изображение
+                                </label>
+                                <input type="file">
+                            </div>
+                            <div class="form__group">
+                                <div class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="checkbox_1" id="checkbox_3" checked>
+                                    <label class="checkbox__label" for="checkbox_3">
+                                        Статус
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn--main" type="submit">
+                                Добавить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="remodal" id="remove_modal">
+        <a href="#" class="remodal__close" data-remodal-action="close"></a>
+        <div class="remodal__title">Вы действительно хотите удалить раздел?</div>
+
+        <div class="remodal__actions">
+            <a href="#" class="btn btn--red">
+                Удалить
+            </a>
+            <a href="#" class="btn btn--main" data-remodal-action="close">
+                Отменить
+            </a>
+        </div>
+    </div>
+    <div class="remodal" id="start_page_modal">
+        <a href="#" class="remodal__close" data-remodal-action="close"></a>
+        <div class="remodal__title">Установить раздел главным</div>
+
+        <div class="remodal__actions">
+            <a href="#" class="btn btn--green">
+                Подтвердить
+            </a>
+            <a href="#" class="btn btn--main" data-remodal-action="close">
+                Отменить
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function (){
+        CKEDITOR.replace(document.querySelector('.ckeditor1'));
+        CKEDITOR.replace(document.querySelector('.ckeditor2'));
+        CKEDITOR.replace(document.querySelector('.ckeditor3'));
+        CKEDITOR.replace(document.querySelector('.ckeditor4'));
+        CKEDITOR.replace(document.querySelector('.ckeditor5'));
+        CKEDITOR.replace(document.querySelector('.ckeditor6'));
+    })
+</script>
+<script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
+</body>
+</html>

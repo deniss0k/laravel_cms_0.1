@@ -1,0 +1,117 @@
+/* 12. Dropdown
+=========================*/
+$dropdown-min-width: 150px;
+$dropdown-shadow: 0 0 .3em rgba(0, 0, 0, .3);
+$dropdown-zindex: 100;
+
+$dropdown-link-padding: .4em .6em;
+$dropdown-link-bg: $white;
+$dropdown-link-bg-hover: $light-gray;
+$dropdown-link-color: #445e79;
+$dropdown-link-font-size: 1em;
+$dropdown-link-line-height: 1.2;
+
+
+
+
+.dropdown-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-right: .7rem;
+    line-height: 1;
+
+    .btn {
+        &.opened {
+            i {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    .btn {
+        i {
+            transition: transform .2s ease;
+        }
+    }
+
+    &--cabinet {
+        display: block;
+        width: 230px;
+    }
+}
+
+.dropdown__block {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.dropdown {
+    width: auto;
+    margin: 0;
+    padding: 0;
+
+    box-shadow: 0 0 .2rem rgba(0, 0, 0, .11);
+    border: 1px solid $light-gray;
+    list-style: none;
+
+    position: absolute;
+    top: 101%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $dropdown-zindex;
+
+    display: none;
+
+    &--right {
+        left: auto;
+        right: 0;
+        text-align: right;
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &--nowrap {
+        white-space: nowrap;
+    }
+
+    &--lng {
+        color: $black;
+
+        .dropdown__link {
+            color: $black;
+            font-weight: 700;
+        }
+    }
+}
+
+.dropdown__link {
+    display: block;
+    padding: $dropdown-link-padding;
+
+    color: $peach;
+    font-size: $dropdown-link-font-size;
+    line-height: $dropdown-link-line-height;
+
+    background-color: $dropdown-link-bg;
+
+    transition: background-color .1s linear;
+
+    &:hover {
+        background-color: $dropdown-link-bg-hover;
+        text-decoration: none;
+    }
+
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.dropdown__arrow {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background: none;
+}
