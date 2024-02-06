@@ -1,0 +1,302 @@
+/* 20. Table
+=========================*/
+$table-color: $black;
+$table-font-size: .9em;
+$table-line-height: 1.2;
+$table-head-color: $black;
+$table-width: 100%;
+$table-margin-bottom: 10px;
+
+$table-head-bg: $light-gray;
+$table-head-border: 2px solid $gray;
+
+$table-th-padding: .5em 1em;
+$table-th-weight: normal;
+$table-th-align: left;
+
+$table-body-border: 1px solid $light-gray;
+
+$table-td-padding: .5em 1em;
+$table-td-align: left;
+
+$table-stripped-bg: darken($light-gray, 2%);
+$table-hover-bg: lighten($light-gray, 2%);
+
+$table-separate-cols-th-border: 1px solid $gray;
+$table-separate-cols-td-border: 1px solid $light-gray;
+
+$table-separate-cols-th-border-dark: 1px solid $yellow;
+$table-separate-cols-td-border-dark: 1px solid $white;
+
+$table-scrollbar-width: 15px;
+$table-scrollbar-height: 15px;
+$table-scrollbar-bg: $black;
+$table-scrollbar-thumb: $yellow;
+
+/* On Dark Bg */
+$table-color-dark: $white;
+$table-head-color-dark: $yellow;
+$table-body-border-dark: $yellow;
+$table-body-bg-dark: transparent;
+
+$table-stripped-bg-dark: darken($black, 5%);
+$table-stripped-bg-dark-hover: darken($black, 3%);
+$table-stripped-color-dark: $white;
+
+.table__wrapper {
+  min-height: .01%;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    background-color: $table-scrollbar-bg;
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    background-color: $table-scrollbar-bg;
+    width: $table-scrollbar-width;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    background-color: $table-scrollbar-bg;
+    height: $table-scrollbar-height;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $table-scrollbar-thumb;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $table-scrollbar-bg;
+  }
+
+  &--header {
+    padding-top: 10px;
+    background-color: #ffffff;
+
+    .table {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: $table-width;
+  margin-bottom: $table-margin-bottom;
+
+  font-size: $table-font-size;
+  line-height: $table-line-height;
+  color: $table-color;
+
+  /* Table Head */
+  thead {
+    tr {
+      background-color: $table-head-bg;
+      border-bottom: $table-head-border;
+    }
+  }
+
+  th {
+    padding: $table-th-padding;
+
+    color: $table-head-color;
+    font-weight: $table-th-weight;
+    text-align: $table-th-align;
+  }
+
+  /* Table Body */
+  tbody {
+    tr {
+      border-bottom: $table-body-border;
+    }
+  }
+
+  td {
+    padding: $table-td-padding;
+    //text-align: $table-td-align;
+  }
+
+  /* Styling */
+  &--striped-odd {
+    tbody tr:nth-child(odd) {
+      background-color: $table-stripped-bg;
+    }
+  }
+
+  &--striped-even {
+    tbody tr:nth-child(even) {
+      background-color: $table-stripped-bg;
+    }
+  }
+
+  &--hover {
+    tbody tr {
+      transition: background-color .1s linear;
+
+      &:hover {
+        background-color: $table-hover-bg;
+      }
+    }
+
+    /* Row Colors */
+    tbody tr {
+      @include table-row(true);
+    }
+  }
+
+  &--separate-cols {
+    th {
+      border: $table-separate-cols-th-border;
+    }
+
+    td {
+      border: $table-separate-cols-td-border;
+    }
+  }
+
+  &--dark {
+    color: $table-color-dark;
+
+    thead {
+
+      th {
+        color: $table-head-color-dark;
+      }
+
+      tr {
+        border-color: $table-body-border-dark;
+        background-color: $table-body-bg-dark;
+      }
+    }
+
+    &.table--striped-odd {
+
+      tbody tr:nth-child(odd) {
+        background-color: $table-stripped-bg-dark;
+        color: $table-stripped-color-dark;
+      }
+    }
+
+    &.table--striped-even {
+
+      tbody tr:nth-child(even) {
+        background-color: $table-stripped-bg-dark;
+        color: $table-stripped-color-dark;
+      }
+    }
+
+    &.table--separate-cols {
+      th {
+        border: $table-separate-cols-th-border-dark;
+      }
+
+      td {
+        border: $table-separate-cols-td-border-dark;
+      }
+    }
+
+    &.table--hover {
+
+      tbody tr {
+
+        &:hover {
+          background-color: $table-stripped-bg-dark-hover;
+          color: $table-stripped-color-dark;
+        }
+
+        /* Row Colors */
+        @include table-row(true);
+      }
+    }
+  }
+
+  /* Row Colors */
+  tbody tr {
+    @include table-row(false);
+  }
+
+  &--contacts {
+    width: 100%;
+    font-size: .8rem;
+    color: $light-blue;
+
+    thead {
+
+      tr {
+        background: none;
+        border-bottom: 1px solid #ededed;
+      }
+
+      th {
+        color: #555555;
+        font-weight: 600;
+        padding: .6rem 1rem;
+      }
+    }
+
+    tbody {
+      tr {
+
+      }
+
+      td {
+        padding: .8em 1em;
+
+        &.date {
+          color: #555555;
+        }
+
+        a {
+          color: $light-blue;
+        }
+      }
+    }
+  }
+
+
+  &--cabinet {
+    font-size: 1.5rem;
+    thead {
+      tr {
+        border-bottom: 0;
+        background-color: transparent;
+        th {
+          padding: 1rem .5rem;
+          font-weight: 700;
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #ccc;
+
+        &:first-child {
+          border-top: 1px solid #ccc;
+        }
+
+        td {
+          padding: 1rem .5rem;
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

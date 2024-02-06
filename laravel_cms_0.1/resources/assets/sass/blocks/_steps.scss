@@ -1,0 +1,120 @@
+
+/* 29. Steps
+=========================*/
+$steps-bg:                          $light-gray;
+
+/* Item */
+$steps-item-padding:                .8em 2em;
+$steps-item-bg:                     $light-gray;
+$steps-item-border-color:           lighten($gray, 20%);
+$steps-item-border:                 1px solid $steps-item-border-color;
+$steps-item-bg-done:                $green;
+$steps-item-border-color-done:      darken($steps-item-bg-done, 5%);
+
+/* Num */
+$steps-num-size:                    30px;
+$steps-num-font-size:               1em;
+$steps-num-color:                   $gray;
+$steps-num-bg:                      $white;
+$steps-num-radius:                  50%;
+$steps-num-color-done:              $green;
+$steps-num-color-current:           $white;
+$steps-num-bg-current:              $light-blue;
+
+/* Num Text */
+$steps-num-text-font-size:          .9em;
+$steps-num-text-color:              $gray;
+$steps-num-text-line-height:        1.2;
+$steps-num-text-align:              center;
+$steps-num-text-margin-top:         .2em;
+$steps-num-text-done:               $white;
+$steps-num-text-current:            $black;
+
+/* Styling */
+$steps-rounded:                     .3em;
+$steps-item-rounded-first:          .3em 0 0 .3em;
+$steps-item-rounded-last:           0 .3em .3em 0;
+$steps-shadow:                      0 0 .2em rgba(0, 0, 0, .3);
+
+
+.steps {
+    display: inline-block;
+    vertical-align: top;
+    margin: $block-margin;
+
+    background-color: $steps-bg;
+
+    @include clearfix;
+
+    /* Styling */
+    &--rounded {
+        border-radius: $steps-rounded;
+
+        .steps__item:first-child {
+            border-radius: $steps-item-rounded-first;
+        }
+
+        .steps__item:last-child {
+            border-radius: $steps-item-rounded-last;
+        }
+    }
+
+    &--shadow {
+        box-shadow: $steps-shadow;
+    }
+}
+
+.steps__item {
+    float: left;
+    padding: $steps-item-padding;
+
+    background-color: $steps-item-bg;
+    border-right: $steps-item-border;
+
+    position: relative;
+
+    &:first-child { margin-left: 0; }
+    &:last-child  {
+        margin-right: 0;
+        border-right: 0;
+    }
+
+    &--done {
+        background-color: $steps-item-bg-done;
+        border-right-color: $steps-item-border-color-done;
+
+        .steps__num  { color: $steps-num-color-done; }
+        .steps__text { color: $steps-num-text-done; }
+    }
+
+    &--current {
+        .steps__num  {
+            background-color: $steps-num-bg-current;
+            color: $steps-num-color-current;
+        }
+        .steps__text { color: $steps-num-text-current; }
+    }
+}
+
+.steps__num {
+    width: $steps-num-size;
+    height: $steps-num-size;
+    margin: 0 auto;
+
+    font-size: $steps-num-font-size;
+    line-height: $steps-num-size;
+    color: $steps-num-color;
+    text-align: $steps-num-text-align;
+    text-decoration: none;
+
+    background-color: $steps-num-bg;
+    border-radius: $steps-num-radius;
+}
+
+.steps__text {
+    margin-top: $steps-num-text-margin-top;
+
+    font-size: $steps-num-text-font-size;
+    color: $steps-num-text-color;
+    line-height: $steps-num-text-line-height;
+}

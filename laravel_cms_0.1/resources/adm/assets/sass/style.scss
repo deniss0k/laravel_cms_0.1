@@ -1,0 +1,224 @@
+@import "variables";
+@import "mixins";
+
+/* --------------- Font Choice --------------- */
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+
+
+
+$title_size: 3rem;
+$text_size: 1.5rem;
+$header_height: 10rem;
+
+
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+
+html {
+  font-size: 10px;
+}
+
+html,
+body {
+  -webkit-overflow-scrolling: touch;
+
+  //&.fixed {
+  //  overflow: hidden;
+  //  touch-action: none;
+  //}
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  //font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: $default_line_height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  font-size: 1.5rem;
+
+
+  &.login-page {
+    background-color: #f2f2f2;
+  }
+
+
+
+  &.inside {
+
+    .header {
+      border-bottom: 1px solid #CFCFCF;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+    }
+  }
+
+
+  &.contacts {
+    .intro__content {
+      min-height: 25rem;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin: 0 0 .5em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666666;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  position: relative;
+
+  @media (max-height: 720px) {
+    min-height: 700px;
+  }
+}
+
+.page__wrapper {
+}
+
+.mask {
+  position: fixed;
+  height: 100%;
+  background: $black;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease-in;
+
+  &.active {
+    opacity: .7;
+    visibility: visible;
+  }
+}
+
+
+
+
+/* Vendor libs
+
+==========================*/
+//@import "vendor/normalize";
+//@import "fontawesome/font-awesome";
+//@import "vendor/animate";
+//@import "vendor/typed";
+//@import "vendor/magnifier";
+//@import "vendor/sortable";
+//@import "vendor/scrollbar";
+@import "vendor/slick";
+//@import "vendor/rangeslider";
+@import "vendor/modal";
+
+/* Import blocks
+==========================*/
+@import "blocks/404";
+@import "blocks/header";
+@import "blocks/checkbox";
+@import "blocks/radio";
+@import "blocks/btn";
+@import "blocks/input";
+@import "blocks/label";
+@import "blocks/textarea";
+@import "blocks/select";
+@import "blocks/breadcrumbs";
+@import "blocks/accordion";
+@import "blocks/alert";
+@import "blocks/sidebar";
+@import "blocks/table";
+@import "blocks/content";
+@import "blocks/tip";
+@import "blocks/form";
+@import "blocks/login";
+@import "blocks/tabs";
+@import "blocks/datatable";
+
+
+
+/* Helpers (must be as last import to override rules when use)
+==========================*/
+@import "_helpers";
+
+
+@import "responsive";
+
+#myChart {
+  height: 400px !important;
+}
+
+#js-overview-chart {
+  width: 165px !important;
+  height: 165px !important;
+}

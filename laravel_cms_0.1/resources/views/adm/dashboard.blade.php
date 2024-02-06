@@ -22,11 +22,17 @@
 
 <div class="page">
     <header class="header">
-
+        <nav>
+            Menu
+        </nav>
     </header>
     <div class="page__content flex">
         <aside class="sidebar js-sidebar opened">
-
+            <ul>
+                <li>Section editor</li>
+                <li>Contacts</li>
+                <li>Settings</li>
+            </ul>
         </aside>
         <div class="page__wrapper js-page-wrapper">
 

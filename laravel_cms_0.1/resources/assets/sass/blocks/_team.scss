@@ -1,0 +1,69 @@
+
+/* 50. Team
+=========================*/
+
+$team-item-width:               280px;
+$team-item-padding:             15px;
+$team-item-margin:              0 15px 30px;
+$team-item-bg:                  $white;
+$team-item-radius:              .3em;
+$team-item-radius:              0 0 .3em rgba(0, 0, 0, .3);
+
+$team-info-text-align:          left;
+
+$team-name-margin-top:          5px;
+$team-name-font-size:           1.2em;
+$team-name-line-height:         1.2;
+$team-name-color:               $black;
+
+$team-text-margin-top:          5px;
+$team-text-font-size:           .9em;
+$team-text-line-height:         1.2;
+$team-text-color:               darken($gray, 10%);
+
+$team-social-margin-top:        10px;
+$team-social-text-align:        left;
+
+
+
+.team {
+    margin: $block-margin;
+}
+
+.team__item {
+    max-width: $team-item-width;
+    padding: $team-item-padding;
+    margin: $team-item-margin;
+    display: inline-block;
+    vertical-align: top;
+
+    background-color: $team-item-bg;
+
+    /* Styling */
+    &--rounded { border-radius: $team-item-radius; }
+    &--shadow  { box-shadow: $team-item-radius; }
+}
+
+.team__info {
+    text-align: $team-info-text-align;
+}
+
+.team__name {
+    margin-top: $team-name-margin-top;
+
+    font-size: $team-name-font-size;
+    line-height: $team-name-line-height;
+    color: $team-name-color;
+}
+
+.team__text {
+    margin-top: $team-text-margin-top;
+    font-size: $team-text-font-size;
+    line-height: $team-text-line-height;
+    color: $team-text-color;
+}
+
+.team__social {
+    margin-top: $team-social-margin-top;
+    text-align: $team-social-text-align;
+}

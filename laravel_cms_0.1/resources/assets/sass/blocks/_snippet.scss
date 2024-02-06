@@ -1,0 +1,34 @@
+
+/* 26. Snippet
+=========================*/
+$snippet-font-family:       $code-font-family;
+$snippet-padding:       .2em .5em;
+$snippet-font-size:     .8em;
+$snippet-line-height:   1;
+$snippet-color:         $black;
+$snippet-bg:            $light-gray;
+$snippet-wrap:          nowrap;
+
+/* Styling */
+$snippet-rounded:       .25em;
+$snippet-shadow:        1px 1px .4em rgba(0, 0, 0, .3);
+
+
+
+.snippet {
+    padding: $snippet-padding;
+
+    background-color: $light-gray;
+
+    font-family: $snippet-font-family;
+    font-size: $snippet-font-size;
+    color: $snippet-color;
+    line-height: $snippet-line-height;
+    white-space: $snippet-wrap;
+
+    /* Colors */
+    @include snippet-color;
+
+    &--rounded { border-radius: $snippet-rounded; }
+    &--shadow  { box-shadow: $snippet-shadow; }
+}

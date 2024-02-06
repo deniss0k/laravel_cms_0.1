@@ -1,0 +1,87 @@
+/* Textarea */
+$textarea-height: 100px;
+$textarea-padding: .5em .9em;
+$textarea-line-height: 1.4;
+$textarea-color: $black;
+$textarea-resize: none;
+$textarea-resize-focus: vertical;
+
+/* Styling */
+$input-style-rounded: .3em;
+$input-style-ellipse: $input-height / 2;
+$input-style-shadow: 1px 1px .3em rgba(0, 0, 0, .2);
+
+/* States */
+$input-error: $red;
+$input-success: $green;
+
+.textarea {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  padding: 1.5rem 2rem;
+  border-radius: 1.6rem;
+  border: 1px solid #E7DED4;
+  vertical-align: middle;
+  background-color: #FBF6F0;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: $black;
+  transition: 0.3s;
+  resize: none;
+  transition: 0.3s;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &::placeholder {
+    color: $black;
+    opacity: 0.3;
+  }
+
+  /* Styling */
+  &--rounded {
+    border-radius: 1.5rem;
+  }
+
+  &--shadow {
+    box-shadow: $input-style-shadow;
+  }
+
+  &--slide {
+
+    &::placeholder {
+      transition: padding-left .3s linear;
+    }
+
+    &:focus::placeholder {
+      padding-left: 150%;
+    }
+  }
+
+  &--ellipse {
+    border-radius: 1.6rem;
+  }
+
+  &--fade {
+
+    &::placeholder {
+      transition: opacity .2s linear;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+
+  /* States */
+  &--error {
+    @include input-state($input-error);
+  }
+
+  &--success {
+    @include input-state($input-success);
+  }
+}

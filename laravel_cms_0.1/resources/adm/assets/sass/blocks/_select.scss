@@ -1,0 +1,167 @@
+/* 19. Select
+=========================*/
+$select-height: 36px;
+$select-font-size: 1em;
+$select-line-height: 1.2;
+$select-color: #333;
+$select-padding: 0 3em 0 .8em;
+
+$select-divider-width: 1px;
+$select-divider-right-indent: 2em;
+$select-divider-color: lighten($gray, 20%);
+$select-divider-right: 2em;
+$select-divider-zindex: 1;
+
+$select-triangle-size: 4px;
+$select-triangle-color: currentColor;
+$select-triangle-top: 50%;
+$select-triangle-right: .75em;
+$select-triangle-zindex: .1;
+
+$select-multiple-height: 100px;
+$select-multiple-padding: .8em;
+
+
+.select {
+  color: $select-color;
+  position: relative;
+
+  &:after {
+    content: '';
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: #c9c9c9;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    margin-top: -.15rem;
+    padding: .3rem;
+    right: 1.4rem;
+    pointer-events: none;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    line-height: $select-line-height;
+    height: 5rem;
+    font-size: 1.5rem;
+    padding: .6rem 1.5rem .6rem 1.5rem;
+    vertical-align: middle;
+    color: $black;
+    font-family: inherit;
+    transition: background-color .1s linear;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-radius: .6rem;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      outline: 0;
+      border-color: $main;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.error {
+      @include input-state($input-error);
+    }
+  }
+
+  &--sort {
+    height: 60px;
+
+    &:before {
+      display: none;
+    }
+
+    select {
+      box-shadow: none;
+      padding-right: 31px;
+    }
+  }
+
+
+  /* Styling */
+  &--rounded {
+    select {
+      border-radius: $input-style-rounded;
+    }
+  }
+
+  &--ellipse {
+    select {
+      border-radius: 2.4rem;
+    }
+  }
+
+  &--shadow {
+    select {
+      box-shadow: $input-style-shadow;
+    }
+  }
+
+
+  /* Types */
+  &--multiple {
+    height: $select-multiple-height;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    select {
+      padding: $select-multiple-padding;
+    }
+  }
+
+
+  /* States */
+  &--error:before,
+  &--error:after {
+    color: $input-error;
+  }
+
+  &--success:before,
+  &--success:after {
+    color: $input-success;
+  }
+
+  &--error select {
+    color: $input-error;
+    @include input-state($input-error);
+  }
+
+  &--success select {
+    color: $input-success;
+    @include input-state($input-success);
+  }
+
+  &--border {
+    select {
+      box-shadow: none;
+      border: 1px solid #ddd;
+      color: $black;
+      transition: all .1s ease;
+
+      &:hover {
+        border-color: darken(#ddd, 10%);
+      }
+    }
+  }
+
+  &--users {
+    width: 100%;
+
+    select {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,398 @@
+.hide, .hidden {
+  display: none;
+}
+
+.ghost {
+  opacity: 0;
+}
+
+.unvisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+
+.block {
+    padding: 20px;
+
+    .text {
+        font-size: 20px;
+    }
+}
+
+
+
+//@use 'sass:color';
+//@use 'mixins';
+//
+//$primary: #000;
+//$secondary: #fff;
+//$red: #ff4000;
+//
+//$theme-colors: (
+//        "primary": $primary,
+//        "secondary": $secondary,
+//        "red": $red
+//);
+//
+////$theme-colors: ();
+////$theme-colors: map-merge(
+////    (
+////            "primary": $primary,
+////            "secondary": $secondary,
+////            "red": $red
+////    ), $theme-colors
+////);
+//
+//
+//.block {
+//  background-color: $red;
+//  @include clearfix;
+//
+//  &:hover {
+//    background-color: color.scale($red, $lightness: -15%);
+//  }
+//}
+//
+//
+//@each $name, $color in $theme-colors {
+//  .text-#{($name)} {
+//    color: ($color);
+//
+//    &:hover {
+//      background-color: color.scale($color, $lightness: -15%);
+//    }
+//
+//    //        @if lightness($color) > 50 {
+//    //            color: $primary;
+//    //        } @else {
+//    //            color: $secondary;
+//    //        }
+//  }
+//}
+//
+//$sizes: 40px, 50px, 80px;
+//
+//@each $size in $sizes {
+//    .icon-#{$size} {
+//        font-size: $size;
+//        height: $size;
+//        width: $size;
+//    }
+//}
+
+@each $color in $colors {
+  .bg-#{nth($color, 1)} {
+    background-color: nth($color, 2);
+  }
+}
+
+.static {
+  position: static;
+}
+
+.text-xs {
+  font-size: .7em;
+}
+
+.text-s {
+  font-size: .8em;
+}
+
+.text-m {
+  font-size: 1.2em;
+}
+
+.text-l {
+  font-size: 1.4em;
+}
+
+.text-xl {
+  font-size: 1.6em;
+}
+
+.text-xxl {
+  font-size: 1.8em;
+}
+
+.text-thin {
+  font-weight: 100;
+}
+
+.text-xlight {
+  font-weight: 200;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.text-normal {
+  font-weight: 400;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-sbold {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-xbold {
+  font-weight: 800;
+}
+
+.text-hbold {
+  font-weight: 900;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-oblique {
+  font-style: oblique;
+}
+
+.text-normal {
+  font-style: normal;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-lower {
+  text-transform: lowercase;
+}
+
+.text-no-transform {
+  text-transform: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-decor-under {
+  text-decoration: underline;
+}
+
+.text-decor-over {
+  text-decoration: overline;
+}
+
+.text-decor-lt {
+  text-decoration: line-through;
+}
+
+.text-decor-none {
+  text-decoration: none;
+}
+
+.float-right, .to-right {
+  float: right;
+}
+
+.float-left, .to-left {
+  float: left;
+}
+
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  &--text {
+    height: 320px;
+  }
+}
+
+.va-middle {
+  vertical-align: middle;
+}
+
+.va-top {
+  vertical-align: top;
+}
+
+.va-bottom {
+  vertical-align: bottom;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.hide-mobile {
+  @media (max-width: $medium) {
+    display: none;
+  }
+}
+
+.hide-desktop {
+  @media (min-width: $medium) {
+    display: none;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+
+.alert {
+
+  &.error {
+    background-color: $red;
+    display: block;
+    color: $white;
+  }
+
+  &.visible-success {
+    background-color: $green;
+    display: block;
+    color: $white;
+  }
+
+  &.success {
+    background-color: $green;
+    display: block;
+    color: $white;
+  }
+}
+
+
+.ui-datepicker {
+  .ui-datepicker-title {
+    select {
+      background: #fff;
+      padding: 5px;
+      color: #3e3e3e;
+      font-weight: 600;
+    }
+  }
+}
+
+html {
+  .ui-widget-content {
+
+    .ui-state-default {
+      border: 0;
+      background: $white;
+      transition: all .2s ease;
+      text-align: center;
+
+      &.ui-state-hover {
+        border: 0;
+        color: $white;
+        background: lighten($orange, 5%);
+      }
+
+      &.ui-state-highlight {
+        background: $orange;
+        border-color: $orange;
+        color: $white;
+      }
+
+      &.ui-state-active {
+        background: darken($orange, 5%);
+      }
+    }
+  }
+}
+
+
+@media (min-width: 992px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.formh {
+  display: none;
+}

@@ -1,0 +1,45 @@
+
+
+/* 25. Code
+=========================*/
+$code-font-family:      Consolas, sans-serif;
+$code-color:            $black;
+$code-font-size:        1em;
+$code-line-height:      1.2;
+$code-bg:               $light-gray;
+$code-border-left:      3px solid darken($light-gray, 5%);
+$code-padding:          .8em;
+$code-margin:           10px 0;
+
+/* Styling */
+$code-rounded:          .3em;
+$code-shadow:           0 0 .5em rgba(0, 0, 0, .3);
+
+
+
+
+.code {
+    display: block;
+    margin: $code-margin;
+    padding: $code-padding;
+
+    background-color: $code-bg;
+    border-left: $code-border-left;
+
+    pre {
+        margin: 0;
+
+        font-size: $code-font-size;
+        line-height: $code-line-height;
+        font-family: $code-font-family;
+        color: $code-color;
+        white-space: pre-wrap;
+    }
+
+    /* Colors */
+    @include code-theme;
+
+    /* Styling */
+    &--rounded { border-radius: $code-rounded; }
+    &--shadow  { box-shadow: $code-shadow; }
+}

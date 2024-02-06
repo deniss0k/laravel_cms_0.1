@@ -1,0 +1,45 @@
+
+/* 30. Vertical Rhythm
+=========================*/
+$vr-font-size-val:           16;
+$vr-line-height-val:         24;
+$vr-title-line-height-val:   $vr-line-height-val * 2;
+
+$vr-font-size:               $vr-font-size-val + px;
+$vr-line-height:             $vr-line-height-val + px;
+
+
+
+
+
+.vr-text {
+    font-size: $vr-font-size;
+    line-height: $vr-line-height;
+
+    h1 {
+        @include vertical-rhythm(3);
+    }
+
+    h2 {
+        @include vertical-rhythm(2.5);
+    }
+
+    h3 {
+        @include vertical-rhythm(2);
+    }
+
+    h4, h5, h6 {
+        @include vertical-rhythm(1.5);
+    }
+
+    p, ul, ol, table {
+        font-size: $vr-font-size;
+        line-height: $vr-line-height;
+        margin: 0 0 $vr-line-height 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+}

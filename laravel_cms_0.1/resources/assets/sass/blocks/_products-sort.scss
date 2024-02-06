@@ -1,0 +1,25 @@
+.products-sort {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.products-sort-container {
+
+}
+
+.select-sort {
+    line-height: 60px;
+    display: inline-block;
+    vertical-align: top;
+
+    select {
+        border: 0;
+    }
+}
+
+.products-sort-result {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 60px;
+}

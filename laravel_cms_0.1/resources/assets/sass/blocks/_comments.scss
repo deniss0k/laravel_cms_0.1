@@ -1,0 +1,148 @@
+
+/* 44. Comments
+=========================*/
+
+/* Avatar */
+$comments-avatar-width:                     50px;
+$comments-avatar-height:                    50px;
+$comments-avatar-top:                       0;
+$comments-avatar-left:                      0;
+$comments-avatar-zindex:                    1;
+
+/* Item */
+$comments-item-padding-left:                $comments-avatar-width + 15;
+$comments-item-margin-bottom:               20px;
+
+/* Author */
+$comments-author-color:                     $cyan;
+$comments-author-font-size:                 1em;
+$comments-author-line-height:               1.2;
+$comments-author-margin-bottom:             5px;
+
+/* Date */
+$comments-date-color:                       $gray;
+$comments-date-font-size:                   .8em;
+$comments-date-line-height:                 1.2;
+$comments-date-margin-left:                 10px;
+
+/* Actions */
+$comments-action-color:                     $gray;
+$comments-action-color-hover:               darken($comments-action-color, 10%);
+$comments-action-font-size:                 .8em;
+$comments-action-line-height:               1;
+$comments-action-margin-left:               5px;
+
+/* Text */
+$comments-text-color:                       $black;
+$comments-text-font-size:                   1em;
+$comments-text-line-height:                 1.4;
+$comments-text-margin-bottom:               5px;
+
+/* Reply */
+$comments-reply-font-size:                  .8em;
+$comments-reply-line-height:                1;
+$comments-reply-color:                      $gray;
+$comments-reply-margin-right:               5px;
+$comments-reply-text-decoration:            none;
+$comments-reply-text-decoration-hover:      underline;
+
+/* Dark Theme */
+$comments-author-color-dark:                $yellow;
+$comments-text-color-dark:                  $white;
+
+
+
+.comments {
+    margin: $block-margin;
+
+    &--dark {
+
+        .comments__author {
+            color: $comments-author-color-dark;
+        }
+
+        .comments__text {
+            color: $comments-text-color-dark;
+        }
+    }
+}
+
+.comments__item {
+    padding-left: $comments-item-padding-left;
+    position: relative;
+    margin-bottom: $comments-item-margin-bottom;
+
+    > .comments__item {
+        margin-top: $comments-item-margin-bottom;
+    }
+
+    @media (max-width: 540px) {
+        padding-left: 0;
+    }
+}
+
+.comments__avatar {
+    width: $comments-avatar-width;
+    height: $comments-avatar-height;
+
+    position: absolute;
+    top: $comments-avatar-top;
+    left: $comments-avatar-left;
+    z-index: $comments-avatar-zindex;
+
+    @media (max-width: 540px) {
+        position: static;
+        margin-bottom: 10px;
+    }
+}
+
+.comments__author {
+    margin-bottom: $comments-author-margin-bottom;
+
+    color: $comments-author-color;
+    font-size: $comments-author-font-size;
+    line-height: $comments-author-line-height;
+}
+
+.comments__date {
+    margin-left: $comments-date-margin-left;
+
+    color: $comments-date-color;
+    font-size: $comments-date-font-size;
+    line-height: $comments-date-line-height;
+}
+
+.comments__action {
+    margin-left: $comments-action-margin-left;
+
+    font-size: $comments-action-font-size;
+    line-height: $comments-action-line-height;
+    color: $comments-action-color;
+
+    transition: color .1s linear;
+
+    &:hover {
+        color: $comments-action-color-hover;
+    }
+}
+
+.comments__text {
+    margin-bottom: $comments-text-margin-bottom;
+
+    font-size: $comments-text-font-size;
+    line-height: $comments-text-line-height;
+    color: $comments-text-color;
+}
+
+.comments__reply-link {
+    margin-right: $comments-reply-margin-right;
+
+    font-size: $comments-reply-font-size;
+    line-height: $comments-reply-line-height;
+    color: $comments-reply-color;
+    text-decoration: $comments-reply-text-decoration;
+
+    &:hover {
+        text-decoration: $comments-reply-text-decoration-hover;
+    }
+}

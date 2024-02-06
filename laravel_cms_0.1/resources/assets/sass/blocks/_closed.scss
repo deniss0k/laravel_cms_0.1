@@ -1,0 +1,156 @@
+.closed__page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  perspective: 1000px;
+}
+
+.closed__container {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  transform: scale(1) rotateZ(7deg) rotateY(14deg);
+  transform-origin: center 12px;
+  animation: 2s init, 0.7s aa 1s, 3s ab 1.7s infinite;
+}
+
+@keyframes aa {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1) rotateZ(7deg) rotateY(14deg);
+  }
+}
+
+@keyframes ab {
+  0% {
+    transform: rotateZ(7deg) rotateY(14deg);
+  }
+  50% {
+    transform: rotateZ(-7deg) rotateY(-14deg);
+  }
+  100% {
+    transform: rotateZ(7deg) rotateY(14deg);
+  }
+}
+
+.closed__box {
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+  background: $orange;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 20px;
+  text-shadow: 0 2px $orange;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rope {
+  width: 150px;
+  height: 150px;
+  border: solid 5px $gray;
+  border-bottom: none;
+  border-right: none;
+  position: absolute;
+  top: 38px;
+  left: 122px;
+  transform: rotatez(45deg);
+}
+
+.pin {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-radius: 25px;
+  background: $black;
+
+  &--first {
+    top: 0;
+    left: 187px;
+  }
+
+  &--second {
+    top: 110px;
+    left: 80px;
+
+  }
+
+
+  &--third {
+    top: 110px;
+    right: 80px;
+
+  }
+}
+
+@keyframes init {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Sticker */
+.sticker {
+  position: relative;
+  display: block;
+  font-weight: 700;
+  background-color: #fcf59b;
+  border-radius: 0px 10px 250px / 0 200px 55px 250px;
+  -webkit-box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
+  -moz-box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
+  box-shadow: -3px 5px 12px 0 rgba(0,0,0,0.3);
+  margin-bottom: 1em;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 90%;
+    height: 20px;
+    -webkit-box-shadow: 3px 17px 6px rgba(0,0,0,.3);
+    -moz-box-shadow: 3px 17px 6px rgba(0,0,0,.3);
+    box-shadow: 3px 17px 6px rgba(0,0,0,.3);
+    bottom: 15px;
+    right: 5px;
+    -ms-transform: skew(-10deg,2deg);
+    -webkit-transform: skew(-10deg,2deg);
+    transform: skew(-10deg,2deg);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 8px;
+    bottom: 1px;
+    border-top: 10px solid rgb(156, 166, 61);
+    border-right: 10px solid transparent;
+    -webkit-transform: skew(-55deg,10deg);
+    transform: skew(-55deg,10deg);
+  }
+}
+
+/* Text on the sticker*/
+.sticker__text {
+  text-align: center;
+  display: block;
+  padding: 1em;
+  font-size: 1.3em;
+  color: $black;
+}

@@ -1,0 +1,86 @@
+/* 43. Benefits
+=========================*/
+
+$benefits-item-padding: 1.25em;
+$benefits-item-align: center;
+
+/* Media wrapper */
+$benefits-media-width: 100px;
+$benefits-media-height: 100px;
+$benefits-media-margin: 10px auto;
+$benefits-media-border: 1px solid $gray;
+$benefits-media-border-radius: 50%;
+$benefits-media-align: center;
+
+/* Icon */
+$benefits-icon-width: 50px;
+$benefits-icon-height: 50px;
+$benefits-icon-color: $light-blue;
+$benefits-icon-font-size: 3em;
+$benefits-icon-zindex: 1;
+
+/* Title */
+$benefits-title-margin: 0 0 5px;
+$benefits-title-color: $black;
+$benefits-title-font-size: 1.3em;
+$benefits-title-line-height: 1.4;
+
+/* Text */
+$benefits-text-font-size: 1em;
+$benefits-text-line-height: 1.2;
+$benefits-text-color: $gray;
+
+
+
+.benefits {
+    margin: $block-margin;
+}
+
+.benefits__item {
+    padding: $benefits-item-padding;
+
+    text-align: $benefits-item-align;
+}
+
+.benefits__media {
+    width: $benefits-media-width;
+    height: $benefits-media-height;
+    margin: $benefits-media-margin;
+
+    border: $benefits-media-border;
+    border-radius: $benefits-media-border-radius;
+    text-align: $benefits-media-align;
+
+    position: relative;
+}
+
+.benefits__icon {
+    display: block;
+    width: $benefits-icon-width;
+    height: $benefits-icon-height;
+
+    color: $benefits-icon-color;
+    font-size: $benefits-icon-font-size;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $benefits-icon-zindex;
+    margin: auto;
+}
+
+.benefits__title {
+    margin: $benefits-title-margin;
+
+    color: $benefits-title-color;
+    font-size: $benefits-title-font-size;
+    line-height: $benefits-title-line-height;
+}
+
+.benefits__text {
+    font-size: $benefits-text-font-size;
+    line-height: $benefits-text-line-height;
+    color: $benefits-text-color;
+}

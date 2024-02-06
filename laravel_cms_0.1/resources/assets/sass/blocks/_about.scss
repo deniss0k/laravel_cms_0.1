@@ -1,0 +1,138 @@
+.about__content {
+  background-color: #001c45;
+  position: relative;
+  padding: 160px 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -27%;
+    transform: translate(-50%,30%);
+    background: url(#{$img}brilliant.png) no-repeat;
+    width: 485px;
+    height: 214px;
+
+    @media (max-width: $medium) {
+      width: 287px;
+      height: 127px;
+      -webkit-background-size: cover;
+      background-size: cover;
+      top: -64px;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: $medium) {
+    padding: 160px 0 0;
+  }
+
+
+}
+
+
+.about__container {
+  display: flex;
+  justify-content: space-between;
+
+
+  @media (max-width: $medium) {
+    display: block;
+    text-align: center;
+    .relative {
+      display: block;
+      margin: 0 auto 100px;
+    }
+  }
+}
+
+.about__block {
+  border: 1px solid #e3ac53;
+  border-bottom-color: transparent;
+  position: relative;
+  padding: 30px;
+  max-width: 290px;
+  margin-bottom: 40px;
+  min-height: 200px;
+  z-index: 2;
+
+  .img {
+    margin: 0 auto 0;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 45px;
+    background-color: #e3ac53;
+    height: 1px;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+
+  @media (max-width: $medium) {
+    margin: 0 auto 30px;
+  }
+}
+
+.about__block-img {
+  height: 120px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.about__block-text {
+  max-width: 185px;
+  margin: 0 auto -52px;
+  color: $white;
+  font-size: 24px;
+  line-height: 24px;
+  display: block;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.about__block-info {
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 24px;
+  max-width: 290px;
+  z-index: 2;
+  position: relative;
+
+  @media (max-width: $medium) {
+    margin: 0 auto;
+  }
+}
+
+.relative {
+  position: relative;
+  z-index: 2;
+}
+
+.about__block-bg {
+  position: absolute;
+  z-index: 1;
+  top: -80px;
+  left: 60px;
+  pointer-events: none;
+
+  @media (max-width: $medium) {
+    left: calc(50% + 27px);
+    transform: translateX(-50%);
+  }
+
+}
+

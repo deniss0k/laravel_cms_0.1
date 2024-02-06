@@ -1,0 +1,46 @@
+.contacts__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contacts__block {
+  width: 40%;
+
+  &:first-child {
+    padding-right: 3rem;
+  }
+  &:last-child {
+    width: 60%;
+  }
+}
+.contacts__form {
+  width: 59rem;
+  max-width: 100%;
+
+  .form__line {
+    margin-bottom: 2.5rem;
+
+    .form__line {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .btn {
+    min-width: 28.5rem;
+  }
+}
+.contacts__title {
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: $black;
+}
+.contacts__text {
+  max-width: 38rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: $black;
+}

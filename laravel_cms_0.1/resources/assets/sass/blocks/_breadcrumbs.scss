@@ -1,0 +1,46 @@
+/* 13. Breadcrumbs
+=========================*/
+
+.breadcrumbs {
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+.breadcrumbs__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: $black;
+  transition: 0.3s;
+
+  &:not(.current):after {
+    content: '';
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    background-color: $main;
+    pointer-events: none;
+  }
+  &:hover:not(.current) {
+    text-decoration: none;
+    opacity: 0.7;
+  }
+  &:last-child {
+    color: $black;
+    opacity: .2;
+    pointer-events: none;
+
+    &:after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+
+/* 7. Switcher
+=========================*/
+
+/* Before element */
+$switcher-before-width:                      40px;
+$switcher-before-height:                     $switcher-before-width / 2;
+$switcher-before-radius:                     $switcher-before-width / 2;
+$switcher-before-shadow:                     1px 1px $switcher-before-width / 40 rgba(0, 0, 0, .3) inset;
+$switcher-before-bg:                         $gray;
+$switcher-before-bg-checked:                 $light-blue;
+$switcher-before-bg-active:                  rgba($switcher-before-bg-checked, .4);
+
+/* After element */
+$switcher-after-width:                       ($switcher-before-width / 2) - 2;
+$switcher-after-height:                      $switcher-before-height - 2;
+$switcher-after-bg:                          $white;
+$switcher-after-bg-active:                   $white;
+$switcher-after-transform:                   $switcher-before-width / 2;
+$switcher-after-transform-active:            $switcher-before-width / 4;
+
+/* Outline */
+$switcher-outline-before-bg:                 transparent;
+$switcher-outline-before-border:             1px solid $gray;
+$switcher-outline-before-bg-checked:         $white;
+$switcher-outline-before-border-checked:     $light-blue;
+$switcher-outline-before-border-active:      rgba($switcher-outline-before-border-checked, .4);
+$switcher-outline-before-bg-active:          rgba($switcher-outline-before-bg-checked, .4);
+
+$switcher-outline-after-bg:                  $gray;
+$switcher-outline-after-bg-checked:          $light-blue;
+$switcher-outline-after-bg-active:           rgba($switcher-outline-after-bg-checked, .4);
+
+/* Thin */
+$switcher-thin-before-height:                3px;
+$switcher-thin-before-top:                   - ceil(($switcher-thin-before-height / 2));
+$switcher-thin-after-shadow:                 0 0 .2em rgba(0, 0, 0, .5);
+$switcher-thin-after-transform:              ($switcher-before-width / 2) + 2;
+$switcher-thin-after-transform-active:       ($switcher-before-width / 4) + 2;
+
+/* Label */
+$switcher-label-color:                       darken($gray, 20%);
+$switcher-label-color-checked:               $black;
+$switcher-label-font-size:                   .8em;
+$switcher-label-indent:                      $switcher-before-width + 10;
+
+
+
+.switcher__input {
+    opacity: 0;
+    position: absolute;
+
+    /* Default */
+   &:checked {
+       + .switcher__label {
+
+           &:after {
+                transform: translate(-5rem, -50%);
+           }
+
+           .no {
+               color: #333;
+           }
+
+           .yes {
+               color: $white;
+           }
+       }
+   }
+}
+
+.switcher__label {
+    width: 10rem;
+    height: 50px;
+    padding: 0 1.6rem 0 1.3rem;
+    border-radius: 2.2rem;
+    border: 1px solid $blue;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    user-select: none;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4rem;
+        height: 40px;
+        right: .4rem;
+        background-color: $blue;
+        border-radius: 2.2rem;
+        transition: transform .2s ease;
+    }
+
+    span {
+        color: #333;
+        position: relative;
+        z-index: 2;
+        transition: color .2s ease;
+    }
+
+    .no {
+        color: $white;
+    }
+}
+
+.switcher__text {
+    display: inline-block;
+    vertical-align: middle;
+}

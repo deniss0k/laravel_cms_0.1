@@ -1,0 +1,16 @@
+/* 6. Label
+=========================*/
+
+.label {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    vertical-align: baseline;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    color: $black;
+    opacity: 0.3;
+    z-index: 1;
+}

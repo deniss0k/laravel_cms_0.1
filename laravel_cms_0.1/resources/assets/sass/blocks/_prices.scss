@@ -1,0 +1,120 @@
+
+/* 45. Prices
+=========================*/
+
+$prices-item-color:                 $white;
+$prices-item-margin-bottom:         5px;
+
+/* Title */
+$prices-title-bg:                   $gray;
+$prices-title-font-size:            1em;
+$prices-title-line-height:          1.2;
+$prices-title-transform:            uppercase;
+$prices-title-color:                $white;
+$prices-title-align:                left;
+$prices-title-padding:              .5em 1em;
+
+/* Header */
+$prices-header-padding:             1em;
+$prices-header-bg:                  $black;
+$prices-header-align:               center;
+
+/* Sum */
+$prices-sum-font-size:              4em;
+$prices-sum-line-height:            1;
+
+/* Currency and term */
+$prices-currency-font-size:         1em;
+$prices-currency-line-height:       1;
+$prices-currency-font-weight:       300;
+$prices-currency-opacity:           .8;
+
+/* Content */
+$prices-content-padding:            1em 2em;
+$prices-content-bg:                 $white;
+$prices-content-color:              $black;
+$prices-content-align:              center;
+
+/* Footer */
+$prices-footer-padding:             0 2em 1em 2em;
+$prices-footer-bg:                  $white;
+$prices-footer-align:               left;
+
+
+
+
+.prices {
+    margin: $block-margin;
+}
+
+.prices__item {
+    display: block;
+    width: 100%;
+    margin-bottom: $prices-item-margin-bottom;
+
+    color: $prices-item-color;
+
+    /* Colors */
+    @include price-theme;
+}
+
+.prices__title {
+    padding: $prices-title-padding;
+    background-color: $prices-title-bg;
+
+    font-size: $prices-title-font-size;
+    line-height: $prices-title-line-height;
+
+    color: $prices-title-color;
+    text-align: $prices-title-align;
+    text-transform: $prices-title-transform;
+}
+
+.prices__header {
+    padding: $prices-header-padding;
+
+    background-color: $prices-header-bg;
+
+    text-align: $prices-header-align;
+}
+
+.prices__sum {
+    font-size: $prices-sum-font-size;
+    line-height: $prices-sum-line-height;
+}
+
+.prices__currency,
+.prices__term {
+    font-weight: $prices-currency-font-weight;
+    font-size: $prices-currency-font-size;
+    line-height: $prices-currency-line-height;
+
+    opacity: $prices-currency-opacity;
+}
+
+.prices__currency {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.prices__term {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.prices__content {
+    padding: $prices-content-padding;
+
+    background-color: $prices-content-bg;
+
+    color: $prices-content-color;
+    text-align: $prices-content-align;
+}
+
+.prices__footer {
+    padding: $prices-footer-padding;
+
+    background-color: $prices-footer-bg;
+
+    text-align: $prices-footer-align;
+}

@@ -1,0 +1,49 @@
+.search__page {
+	padding-bottom: 10rem;
+}
+.search__page-wrapper {
+	margin-bottom: 3.5rem;
+	padding-top: 3rem;
+}
+.search__item {
+	display: flex;
+	margin-bottom: 2.5rem;
+	padding: 3rem;
+	border-radius: 14px;
+	background: #FFFFFF;
+	font-weight: 600;
+	font-size: 1.5rem;
+	color: #000000;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&:hover {
+		text-decoration: none;
+
+		.search__title {
+			color: $yellow;
+		}
+	}
+}
+.search__number {
+	width: 5rem;
+}
+.search__title {
+	width: calc(100% - 20rem);
+	transition: 0.3s;
+
+	span {
+		display: block;
+		color: rgba(0, 0, 0, 0.3);
+	}
+}
+.search__price {
+	width: 15rem;
+	text-align: center;
+}
+.search__text {
+	font-weight: 500;
+	font-size: 1.5rem;
+	color: #000000;
+}

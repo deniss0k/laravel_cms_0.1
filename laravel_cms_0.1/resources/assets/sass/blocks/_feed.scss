@@ -1,0 +1,387 @@
+
+/* 41. Feed
+=========================*/
+
+/* Item */
+$feed-item-padding:                                 10px;
+$feed-item-margin-bottom:                           30px;
+$feed-item-bg:                                      $white;
+$feed-item-shadow:                                  0 0 .3em rgba(0, 0, 0, .35);
+
+/* Author Avatar */
+$feed-author-avatar-width:                          50px;
+$feed-author-avatar-height:                         50px;
+$feed-author-avatar-top:                            0;
+$feed-author-avatar-left:                           0;
+$feed-author-avatar-zindex:                         1;
+$feed-author-name-font-size:                        1em;
+$feed-author-name-line-height:                      1.2;
+$feed-author-name-color:                            $cyan;
+
+/* Date */
+$feed-date-color:                                   $gray;
+$feed-date-font-size:                               .8em;
+$feed-date-line-height:                             1;
+
+/* Header */
+$feed-header-margin-bottom:                         10px;
+$feed-header-padding-left:                          $feed-author-avatar-width + 10;
+
+/* Title */
+$feed-title-margin:                                 0 0 10px;
+$feed-title-font-size:                              1.8em;
+$feed-title-line-height:                            1.4;
+$feed-title-color:                                  $black;
+$feed-title-font-weight:                            normal;
+$feed-title-icon-font-size:                         .7em;
+$feed-title-icon-margin-right:                      5px;
+
+/* Text */
+$feed-text-margin-bottom:                           10px;
+$feed-text-color:                                   $black;
+$feed-text-font-size:                               .9em;
+$feed-text-line-height:                             1.4;
+
+/* Actions */
+$feed-actions-margin-top:                           10px;
+$feed-actions-item-margin-right:                    10px;
+$feed-actions-item-font-size:                       .9em;
+$feed-actions-item-line-height:                     1;
+$feed-actions-item-color:                           $teal;
+$feed-actions-item-opacity:                         .8;
+$feed-actions-item-icon-margin-right:               5px;
+
+/* Comments */
+$feed-comments-avatar-width:                        40px;
+$feed-comments-avatar-height:                       40px;
+$feed-comments-avatar-top:                          0;
+$feed-comments-avatar-left:                         0;
+$feed-comments-avatar-zindex:                       1;
+
+$feed-comments-margin-top:                          10px;
+$feed-comments-padding-top:                         10px;
+$feed-comments-border-top:                          1px solid $light-gray;
+$feed-comments-item-padding-left:                   $feed-comments-avatar-width + 10;
+$feed-comments-item-margin-bottom:                  10px;
+
+$feed-comments-author-color:                        $blue;
+$feed-comments-author-font-size:                    .9em;
+$feed-comments-author-line-height:                  1.1;
+
+$feed-comments-text-margin-top:                     3px;
+$feed-comments-text-color:                          $black;
+$feed-comments-font-size:                           .9em;
+$feed-comments-line-height:                         1.2;
+
+$feed-comments-footer-margin-top:                   5px;
+$feed-comments-footer-font-size:                    .8em;
+$feed-comments-footer-line-height:                  1.4;
+
+$feed-comments-pubdate-margin-right:                10px;
+$feed-comments-pubdate-color:                       $gray;
+$feed-comments-icon-opacity:                        .8;
+$feed-comments-icon-margin-right:                   3px;
+
+$feed-comments-load-margin-top:                     20px;
+$feed-comments-load-padding:                        .5em;
+$feed-comments-load-bg:                             $light-gray;
+$feed-comments-load-bg-hover:                       darken($feed-comments-load-bg, 3%);
+$feed-comments-load-align:                          center;
+$feed-comments-load-decoration:                     none;
+$feed-comments-load-color:                          $gray;
+$feed-comments-load-font-size:                      1em;
+$feed-comments-load-line-height:                    1.4;
+
+$feed-comments-leave-margin-top:                    10px;
+
+$feed-comments-textarea-height:                     75px;
+$feed-comments-textarea-padding:                    .3em .5em;
+$feed-comments-textarea-font-family:                inherit;
+$feed-comments-textarea-font-size:                  .9em;
+$feed-comments-textarea-line-height:                1.2;
+$feed-comments-textarea-color:                      $black;
+$feed-comments-textarea-border-color:               $light-gray;
+$feed-comments-textarea-border:                     1px solid $feed-comments-textarea-border-color;
+$feed-comments-textarea-resize:                     none;
+$feed-comments-textarea-placeholder-color:          lighten($gray, 20%);
+$feed-comments-textarea-border-color-focus:         $light-blue;
+$feed-comments-textarea-border-shadow-focus:        0 0 .3em rgba($feed-comments-textarea-border-color-focus, .6);
+
+
+
+
+.feed {
+    width: auto;
+    max-width: 100%;
+}
+
+.feed__item {
+    padding: $feed-item-padding;
+    margin-bottom: $feed-item-margin-bottom;
+
+    background-color: $feed-item-bg;
+    box-shadow: $feed-item-shadow;
+}
+
+.feed__header {
+    margin-bottom: $feed-header-margin-bottom;
+    padding-left: $feed-header-padding-left;
+    position: relative;
+}
+
+.feed__avatar {
+    width: $feed-author-avatar-width;
+    height: $feed-author-avatar-height;
+
+    position: absolute;
+    top: $feed-author-avatar-top;
+    left: $feed-author-avatar-left;
+    z-index: $feed-author-avatar-zindex;
+}
+
+.feed__name {
+    font-size: $feed-author-name-font-size;
+    line-height: $feed-author-name-line-height;
+    color: $feed-author-name-color;
+
+    a {
+       color: $feed-author-name-color;
+    }
+}
+
+.feed__date {
+    color: $feed-date-color;
+    font-size: $feed-date-font-size;
+    font-size: $feed-date-line-height;
+}
+
+.feed__photo {
+
+    img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.feed__title {
+    margin: $feed-title-margin;
+
+    color: $feed-title-color;
+    font-size: $feed-title-font-size;
+    line-height: $feed-title-line-height;
+    font-weight: $feed-title-font-weight;
+
+    i {
+        margin-right: $feed-title-icon-margin-right;
+
+        font-size: $feed-title-icon-font-size;
+    }
+
+    a {
+        color: $feed-title-color;
+        text-decoration: none;
+
+        &:hover {
+            color: $feed-title-color;
+            text-decoration: underline;
+        }
+    }
+}
+
+.feed__text {
+    margin-bottom: $feed-text-margin-bottom;
+
+    color: $feed-text-color;
+    font-size: $feed-text-font-size;
+    line-height: $feed-text-line-height;
+}
+
+.feed__actions {
+    margin-top: $feed-actions-margin-top;
+    position: relative;
+}
+
+.feed__actions-item {
+    margin-right: $feed-actions-item-margin-right;
+
+    font-size: $feed-actions-item-font-size;
+    line-height: $feed-actions-item-line-height;
+    color: $feed-actions-item-color;
+
+    opacity: $feed-actions-item-opacity;
+
+    transition: opacity .1s linear;
+
+    i {
+        margin-right: $feed-actions-item-icon-margin-right;
+    }
+
+    &:hover {
+        opacity: 1;
+        text-decoration: none;
+    }
+
+    &--comment {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        z-index: 1;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.feed__comments {
+    margin-top: $feed-comments-margin-top;
+    padding-top: $feed-comments-padding-top;
+    border-top: $feed-comments-border-top;
+}
+
+.feed__comments-item {
+    padding-left: $feed-comments-item-padding-left;
+    margin-bottom: $feed-comments-item-margin-bottom;
+    position: relative;
+
+    > .feed__comments-item {
+        margin-top: $feed-comments-item-margin-bottom;
+    }
+
+    @media (max-width: 540px) {
+        padding-left: 0;
+    }
+}
+
+.feed__comments-avatar {
+    width: $feed-comments-avatar-width;
+    height: $feed-comments-avatar-height;
+
+    position: absolute;
+    top: $feed-comments-avatar-top;
+    left: $feed-comments-avatar-left;
+    z-index: $feed-comments-avatar-zindex;
+
+    img {
+        max-width: $feed-comments-avatar-width;
+        height: $feed-comments-avatar-height;
+    }
+
+    @media (max-width: 540px) {
+        position: static;
+        margin-bottom: 5px;
+    }
+}
+
+.feed__comments-author {
+    color: $feed-comments-author-color;
+    font-size: $feed-comments-author-font-size;
+    line-height: $feed-comments-author-line-height;
+}
+
+.feed__comments-text {
+    margin-top: $feed-comments-text-margin-top;
+
+    color: $feed-comments-text-color;
+    font-size: $feed-comments-font-size;
+    line-height: $feed-comments-line-height;
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.feed__comments-footer {
+    margin-top: $feed-comments-footer-margin-top;
+
+    font-size: $feed-comments-footer-font-size;
+    line-height: $feed-comments-footer-line-height;
+
+    position: relative;
+}
+
+.feed__comments-pubdate {
+    margin-right: $feed-comments-pubdate-margin-right;
+    color: $feed-comments-pubdate-color;
+}
+
+.feed__comments-like {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    opacity: $feed-comments-icon-opacity;
+
+    transition: opacity .1s linear;
+
+    i {
+        margin-right:$feed-comments-icon-margin-right;
+    }
+
+    &:hover {
+        opacity: 1;
+        text-decoration: none;
+    }
+}
+
+.feed__comments-load {
+    display: block;
+    margin-top: $feed-comments-load-margin-top;
+    padding: $feed-comments-load-padding;
+
+    background-color: $feed-comments-load-bg;
+
+    font-size: $feed-comments-load-font-size;
+    line-height: $feed-comments-load-line-height;
+    text-align: $feed-comments-load-align;
+    text-decoration: $feed-comments-load-decoration;
+    color: $feed-comments-load-color;
+
+    transition: background-color .1s linear;
+
+    &:focus { text-decoration: none; }
+
+    &:hover {
+        background-color: $feed-comments-load-bg-hover;
+        text-decoration: none;
+    }
+}
+
+.feed__comments-leave {
+    position: relative;
+    padding-left: $feed-comments-item-padding-left;
+    margin-top: $feed-comments-leave-margin-top;
+
+    @media (max-width: 540px) {
+        padding-left: 0;
+    }
+}
+
+.feed__comments-textarea {
+    width: 100%;
+    height: $feed-comments-textarea-height;
+    padding: $feed-comments-textarea-padding;
+
+    font-family: $feed-comments-textarea-font-family;
+    font-size: $feed-comments-textarea-font-size;
+    line-height: $feed-comments-textarea-line-height;
+    color: $feed-comments-textarea-color;
+
+    border: $feed-comments-textarea-border;
+    resize: $feed-comments-textarea-resize;
+
+    transition: border-color .1s linear, box-shadow .1s linear;
+
+    &::placeholder {
+        color: $feed-comments-textarea-placeholder-color;
+    }
+
+    &:focus {
+        border-color: $feed-comments-textarea-border-color-focus;
+        box-shadow: $feed-comments-textarea-border-shadow-focus;
+        outline: 0;
+    }
+}

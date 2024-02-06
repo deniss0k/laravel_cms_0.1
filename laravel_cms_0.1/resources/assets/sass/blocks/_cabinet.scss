@@ -1,0 +1,19 @@
+.profile__form {
+    width: 800px;
+    max-width: 100%;
+
+    .form__line {
+        margin-bottom: 2.5rem;
+
+        .form__line {
+          margin-bottom: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    .btn {
+        min-width: 20rem;
+        margin-top: 0;
+    }
+}

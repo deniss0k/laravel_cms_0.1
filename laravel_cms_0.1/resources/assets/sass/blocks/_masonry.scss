@@ -1,0 +1,28 @@
+/* 38. Masonry Grid
+=========================*/
+$masonry-grid-width:                100%;
+
+$masonry-item-width:                200px;
+$masonry-item-padding:              1em;
+$masonry-item-margin-bottom:        20px;
+$masonry-item-bg:                   $purple;
+$masonry-item-radius:               10px;
+$masonry-item-color:                $white;
+
+.masonry {
+    width: $masonry-grid-width;
+
+    position: relative;
+}
+
+.masonry__item {
+    width: 100%;
+    max-width: $masonry-item-width;
+    float: left;
+    padding: $masonry-item-padding;
+    margin-bottom: $masonry-item-margin-bottom;
+
+    background-color: $masonry-item-bg;
+    border-radius: $masonry-item-radius;
+    color: $masonry-item-color;
+}

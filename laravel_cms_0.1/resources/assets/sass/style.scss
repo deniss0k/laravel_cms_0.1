@@ -1,0 +1,247 @@
+@import "variables";
+@import "mixins";
+
+/* --------------- Font Choice --------------- */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+
+$title_size: 3rem;
+$text_size: 1.5rem;
+$header_height: 8rem;
+
+.container {
+  width: 100%;
+}
+
+html {
+  font-size: 10px;
+
+  &.remodal-is-locked {
+    .header {
+      padding-right: 5px;
+    }
+  }
+}
+
+html,
+body {
+  -webkit-overflow-scrolling: touch;
+
+  &.fixed {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+body {
+  font-family: 'Mulish',sans-serif;
+  //font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: $default_line_height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  overflow-x: hidden;
+  font-size: 1.5rem;
+
+  &.fixed {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    padding-right: 5px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin: 0 0 .5em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666666;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.page__wrapper {
+  padding-top: $header_height;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  transition: 0.3s;
+
+  &.active {
+    opacity: .8;
+    visibility: visible;
+  }
+}
+/* Vendor libs
+
+==========================*/
+//@import "vendor/normalize";
+//@import "fontawesome/font-awesome";
+//@import "vendor/animate";
+//@import "vendor/typed";
+//@import "vendor/magnifier";
+//@import "vendor/sortable";
+//@import "vendor/scrollbar";
+@import "vendor/slick";
+//@import "vendor/rangeslider";
+@import "vendor/modal";
+
+/* Import blocks
+==========================*/
+@import "blocks/grid";
+@import "blocks/404";
+@import "blocks/closed";
+@import "blocks/header";
+//@import "blocks/switcher";
+//@import "blocks/checkbox";
+//@import "blocks/radio";
+//@import "blocks/about";
+@import "blocks/btn";
+//@import "blocks/dropdown";
+@import "blocks/form";
+@import "blocks/input";
+@import "blocks/textarea";
+@import "blocks/label";
+@import "blocks/select";
+//@import "blocks/reviews";
+@import "blocks/breadcrumbs";
+@import "blocks/pagination";
+@import "blocks/alert";
+@import "blocks/blocks";
+@import "blocks/news";
+//@import "blocks/country";
+//@import "blocks/list";
+//@import "blocks/table";
+//@import "blocks/tabs";
+//@import "blocks/accordion";
+//@import "blocks/navbar";
+//@import "blocks/sidebar";
+//@import "blocks/travel";
+//@import "blocks/main";
+@import "blocks/footer";
+//@import "blocks/products";
+@import "blocks/product";
+//@import "blocks/shop-cart";
+@import "blocks/intro";
+//@import "blocks/rating";
+@import "blocks/cabinet";
+@import "blocks/cookie";
+//@import "blocks/products-sort";
+//@import "blocks/preloader";
+//@import "blocks/mobile-menu";
+@import "blocks/text";
+//@import "blocks/menu";
+//@import "blocks/features";
+@import "blocks/gallery";
+@import "blocks/contacts";
+//@import "blocks/block";
+//@import "blocks/dropzone";
+//@import "blocks/select2";
+//@import "blocks/banner";
+//@import "blocks/recommended";
+//@import "blocks/info";
+//@import "blocks/filter";
+//@import "blocks/nouislider";
+//@import "blocks/wholesale";
+
+//@import "blocks/benefits";
+//@import "blocks/comments";
+//@import "blocks/mark";
+//@import "blocks/feed";
+//@import "blocks/video";
+//@import "blocks/social";
+
+//@import "blocks/statistic";
+//@import "blocks/prices";
+//@import "blocks/code";
+//@import "blocks/snippet";
+//@import "blocks/img";
+//@import "blocks/filter";
+//@import "blocks/progress";
+//@import "blocks/vr-text";
+//@import "blocks/separator";
+@import "blocks/content";
+@import "blocks/contacts";
+
+//@import "blocks/steps";
+//@import "blocks/flags";
+//@import "blocks/masonry";
+//@import "blocks/team";
+//@import "blocks/tip";
+//@import "blocks/loader";
+//@import "blocks/google-map";
+//@import "blocks/content";
+
+//@import "blocks/_cart";
+//@import "blocks/_search";
+@import "blocks/_category";
+@import "blocks/_login";
+
+/* Helpers (must be as last import to override rules when use)
+==========================*/
+@import "_helpers";
+
+@import "responsive";

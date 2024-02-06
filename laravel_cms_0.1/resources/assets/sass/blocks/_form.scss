@@ -1,0 +1,145 @@
+form {
+  max-width: 80rem;
+
+  &.full {
+    max-width: 100%;
+  }
+}
+.form__line {
+  margin-bottom: 1rem;
+
+  .btn {
+    min-width: 14rem;
+    margin-top: 2rem;
+    padding: 0 4rem;
+  }
+  .form__line {
+    margin-bottom: 0;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+.form__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -1rem;
+
+  &.left {
+    justify-content: flex-start;
+  }
+  .form__line {
+    width: 50%;
+    padding: 0 1rem;
+
+    &--small {
+      width: calc(100% / 6);
+    }
+    &--medium {
+      width: 25%;
+    }
+    &--large {
+      width: calc(100% / 3);
+    }
+  }
+}
+.form__group {
+  position: relative;
+  padding-top: 2rem;
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .input {
+    &::placeholder {
+      transition: 0.3s;
+    }
+    &:focus + .label {
+      opacity: 1;
+    }
+    &:not(:placeholder-shown) + .label {
+      opacity: 1;
+    }
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+}
+.form__link {
+  display: block;
+  margin-top: 2rem;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: $main;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    text-decoration-color: $main;
+  }
+}
+
+.form__line-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 3rem 3.5rem;
+  background: #FFFFFF;
+  border-radius: 14px;
+
+  .form__line-block {
+    &:last-child {
+      padding-left: 15.5%;
+    }
+  }
+  .label {
+    margin-bottom: 0;
+
+    &.field__file-wrapper {
+      border-radius: 0;
+      border: none;
+      overflow: inherit;
+    }
+  }
+  .label__file {
+    position: absolute;
+    bottom: -2rem;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    font-size: 1.2rem;
+    justify-content: center;
+  }
+  .file__name {
+    position: static;
+    height: 5.4rem;
+    background-color: transparent;
+    color: $yellow;
+
+    &:hover {
+      background-color: $yellow;
+      color: $white;
+    }
+  }
+}
+.profile {
+  .full {
+    .form__line-wrapper {
+      align-items: inherit;
+    }
+
+  }
+}

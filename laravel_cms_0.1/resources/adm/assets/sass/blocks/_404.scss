@@ -1,0 +1,38 @@
+.error__page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  background-color: $real-black;
+}
+
+.error__title {
+  font-size: 10rem;
+  color: $real-black;
+  background: linear-gradient(to left, $red 5%, $red 53%, $red 91%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.error__subtitle {
+  font-size: 4.2rem;
+  color: $white;
+  font-weight: 700;
+}
+
+.error__text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 2rem;
+}

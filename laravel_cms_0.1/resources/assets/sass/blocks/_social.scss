@@ -1,0 +1,48 @@
+
+/* 15. Social
+=========================*/
+$social-width:              30px;
+$social-height:             30px;
+$social-margin-bottom:      5px;
+$social-color:              $white;
+$social-font-size:          1em;
+$social-align:              center;
+
+/* Styling */
+$social-rounded:            .3em;
+$social-circle:             50%;
+$social-shadow:             0 0 .2em rgba(0, 0, 0, .3);
+
+
+
+.social {
+    display: inline-block;
+    vertical-align: top;
+    width: $social-width;
+    height: $social-height;
+    margin-bottom: $social-margin-bottom;
+
+    color: $social-color;
+    font-size: $social-font-size;
+    line-height: $social-height;
+    text-align: $social-align;
+
+    transition: background-color .1s linear;
+
+    &:focus { text-decoration: none; }
+
+    /* Colors */
+    @include social;
+
+    /* Styling */
+    &--rounded { border-radius: $social-rounded; }
+    &--circle  { border-radius: $social-circle; }
+    &--shadow  { box-shadow: $social-shadow; }
+    &--scale {
+        &:hover {
+            i {
+                transform: scale(1.2, 1.2);
+            }
+        }
+    }
+}

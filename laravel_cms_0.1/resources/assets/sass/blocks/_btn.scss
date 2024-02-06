@@ -1,0 +1,168 @@
+/* 11. Buttons
+=========================*/
+$btn-padding: 0 2.5rem 0;
+$btn-margin-bottom: 5px;
+$btn-font-family: inherit;
+$btn-font-size: 1em;
+$btn-line-height: 1;
+$btn-align: center;
+$btn-cursor: pointer;
+
+$btn-default-color: $black;
+$btn-default-bg: $light-gray;
+
+/* Sizes */
+$btn-xs-font-size: .7em;
+$btn-s-font-size: .8em;
+$btn-m-font-size: 1.2em;
+$btn-l-font-size: 1.4em;
+$btn-xl-font-size: 1.6em;
+$btn-xxl-font-size: 1.8em;
+
+/* Styling */
+$btn-rounded: .4rem;
+$btn-ellipse: 2.6em;
+$btn-shadow: 1px 1px .3em rgba(0, 0, 0, .3);
+$btn-icon-margin: .5em;
+
+$btn-inverted-border-color: $gray;
+$btn-inverted-border: 1px solid $gray;
+$btn-inverted-color: $white;
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  height: 5.4rem;
+  padding: $btn-padding;
+
+  text-decoration: none;
+  border: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: $btn-default-bg;
+
+  color: $btn-default-color;
+  font-family: $btn-font-family;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-align: $btn-align;
+  cursor: $btn-cursor;
+  font-weight: 700;
+  transition: 0.3s;
+  border-radius: 14px;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:focus {
+    background-color: darken($btn-default-bg, 3%);
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: darken($btn-default-bg, 5%);
+  }
+
+  &:active {
+    background-color: darken($btn-default-bg, 7%);
+  }
+
+  /* Colors */
+  @include btn;
+
+  /* Outline */
+  @include btn-o;
+
+  /* Inverted Outline */
+  @include btn-i;
+
+  /* Vertical Gradient */
+  //@include btn-gradient(vertical);
+
+  /* Horizontal Gradient */
+  //@include btn-gradient(horizontal);
+
+  /* Sizes */
+  &--xs {
+    min-height: 0;
+    font-size: $btn-xs-font-size;
+  }
+
+  &--s {
+    min-height: 0;
+    font-size: $btn-s-font-size;
+  }
+
+  &--m {
+    font-size: $btn-m-font-size;
+  }
+
+  &--l {
+    font-size: $btn-l-font-size;
+  }
+
+  &--xl {
+    font-size: $btn-xl-font-size;
+  }
+
+  &--xxl {
+    font-size: $btn-xxl-font-size;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  /* Styling */
+  &--rounded {
+    border-radius: .2rem;
+  }
+
+  &--ellipse {
+    border-radius: $btn-ellipse;
+  }
+
+  &--shadow {
+    box-shadow: $btn-shadow;
+  }
+
+  &--icon-before {
+    i {
+      margin-right: $btn-icon-margin;
+    }
+  }
+
+  &--icon-after {
+    i {
+      margin-left: $btn-icon-margin;
+    }
+  }
+
+  &--o-white {
+    border-color: $white;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &--white {
+    color: $yellow;
+  }
+
+  &--main {
+    background-color: $main;
+    color: $white;
+
+    &:hover {
+      background-color: $main-light;
+    }
+  }
+
+  &--blue {
+    background: linear-gradient(180deg, #0270E3 0%, #315ED2 100%);
+  }
+
+}

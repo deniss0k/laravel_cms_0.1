@@ -1,0 +1,31 @@
+//.filter {
+//    &--grayscale { @include img-filter(grayscale, 1); }
+//    &--sepia     { @include img-filter(sepia, 1); }
+//    &--invert    { @include img-filter(invert, 1); }
+//    &--blur      { @include img-filter(blur, 5px); }
+//    &--contrast  { @include img-filter(contrast, 2); }
+//}
+
+
+.filter__form {
+    padding: 1em;
+    background-color: $white;
+}
+
+.filter__title {
+    font-weight: 500;
+    color: $black;
+    margin-bottom: 10px;
+    display: block;
+
+    .fa {
+        transition: all .1s ease;
+    }
+
+
+    &.active {
+        .fa {
+            transform: rotate(-180deg);
+        }
+    }
+}
