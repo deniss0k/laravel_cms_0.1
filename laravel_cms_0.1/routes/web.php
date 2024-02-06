@@ -25,7 +25,7 @@ Route::prefix($ADMIN_FOLDER)->group(function () {
         if ($module->main === 1) {
             Route::get("/", "App\Http\Controllers\Admin\\$module->controller@index")->name($module->name);
         }
-        Route::get("/$module->slug", "App\Http\Controllers\Admin\\$module->controller@index")->where('moduleID', $module->id)->name($module->name);
+        Route::get("/$module->slug", "App\Http\Controllers\Admin\\$module->controller@index")->name($module->name)->where('module', $module->id);
     }
 });
 

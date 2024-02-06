@@ -12,7 +12,7 @@ class SectionsController extends Controller
     {
         $route = Route::current();
 
-        $moduleID = $route->parameter('moduleID');
+        $moduleID = $route->parameter('module');
 
         $module = Module::where('id', $moduleID)->first();
 
