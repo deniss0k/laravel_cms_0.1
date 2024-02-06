@@ -1,0 +1,90 @@
+/* Textarea */
+$textarea-height: 100px;
+$textarea-padding: .5em .9em;
+$textarea-line-height: 1.4;
+$textarea-color: $black;
+$textarea-resize: none;
+$textarea-resize-focus: vertical;
+
+/* Styling */
+$input-style-rounded: .3em;
+$input-style-ellipse: $input-height / 2;
+$input-style-shadow: 1px 1px .3em rgba(0, 0, 0, .2);
+
+/* States */
+$input-error: $red;
+$input-success: $green;
+
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: 10rem;
+  resize: vertical;
+  font-weight: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  vertical-align: middle;
+  color: $black;
+  font-family: inherit;
+  transition: background-color .1s linear;
+  border-radius: .6rem;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+
+  transition: background-color .1s linear;
+
+  &:focus {
+    outline: 0;
+    resize: $textarea-resize-focus;
+    border-color: $main;
+  }
+
+  &::placeholder {
+    color: #9C9C9C;
+
+  }
+
+  /* Styling */
+  &--rounded {
+    border-radius: 1.5rem;
+  }
+
+  &--shadow {
+    box-shadow: $input-style-shadow;
+  }
+
+  &--slide {
+
+    &::placeholder {
+      transition: padding-left .3s linear;
+    }
+
+    &:focus::placeholder {
+      padding-left: 150%;
+    }
+  }
+
+  &--ellipse {
+    border-radius: 1.6rem;
+  }
+
+  &--fade {
+
+    &::placeholder {
+      transition: opacity .2s linear;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+
+  /* States */
+  &--error {
+    @include input-state($input-error);
+  }
+
+  &--success {
+    @include input-state($input-success);
+  }
+}

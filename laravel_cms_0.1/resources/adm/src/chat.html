@@ -1,0 +1,1153 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Administration: &nbsp;HotWay.app [18.08.2023 10:27]</title>
+  <link rel="shortcut icon" href="/userfiles/theme/hotway-logo2-icon.svg?1692343643">
+  <link rel="stylesheet" href="../build/css/style.min.css?1692334333333343433643">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="modules/js/font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="modules/newjquery/jquery-ui-1.12.1.custom/jquery-ui.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="modules/newjquery/jquery-ui-1.12.1.custom/jquery-ui.min.css" type="text/css"/>
+
+  <link rel="stylesheet" media="screen" type="text/css" href="modules/colorpicker/colorpicker.css?1692343643"/>
+  <script type="text/javascript" src="modules/colorpicker/colorpicker.js?1692343643"></script>
+
+  <!--DATATABLE-->
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+  <script type="text/javascript"
+          src="//cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/b-print-1.5.1/datatables.min.js"></script>
+  <!--DATATABLE-->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  <script type='text/javascript' src='modules/js/jquery.cookie.js'></script>
+  <script type='text/javascript' src='modules/js/jquery.hoverIntent.minified.js'></script>
+  <script type='text/javascript' src='modules/js/jquery.dcjqaccordion.2.7.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+
+  <link rel="stylesheet" href="src/assets/fontawesome/fontawesome.min.css">
+  <!--TOAST-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"
+          integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css"
+        integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"></script>
+
+  <script src="ckeditor/ckeditor.js"></script>
+
+  <script src="//hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.js"
+          type="text/javascript"></script>
+  <link href="//hayageek.github.io/jQuery-Upload-File/4.0.10/uploadfile.css" rel="stylesheet">
+
+  <script src="/build/js/main.js"></script>
+
+</head>
+<body>
+<svg display="none">
+  <symbol id="check-mark" viewBox="0 0 11 8">
+    <path
+        d="M10.6723 1.87828L4.87231 7.67782C4.44282 8.10739 3.74611 8.10739 3.31621 7.67782L0.322242 4.68363C-0.107414 4.25406 -0.107414 3.55727 0.322242 3.12761C0.751979 2.69788 1.44863 2.69788 1.87818 3.12745L4.09449 5.34379L9.11608 0.322181C9.54582 -0.107556 10.2425 -0.107231 10.6721 0.322181C11.1017 0.751837 11.1017 1.44838 10.6723 1.87828Z"/>
+  </symbol>
+  <symbol id="pencil" viewBox="0 0 10 10">
+    <path
+        d="M0 7.91696V10H2.08304L8.22663 3.85641L6.14359 1.77336L0 7.91696ZM9.83752 2.24552C10.0542 2.02888 10.0542 1.67893 9.83752 1.4623L8.5377 0.162477C8.32107 -0.0541591 7.97111 -0.0541591 7.75448 0.162477L6.73795 1.179L8.821 3.26205L9.83752 2.24552Z"/>
+  </symbol>
+  <symbol id="delete" viewBox="0 0 9 10">
+    <path
+        d="M7.75862 1.03448H5.17241V0.517241C5.17241 0.231552 4.94086 0 4.65517 0H3.62069C3.335 0 3.10345 0.231552 3.10345 0.517241V1.03448H0.517241C0.231552 1.03448 0 1.26603 0 1.55172V2.06897H8.27586V1.55172C8.27586 1.26603 8.04431 1.03448 7.75862 1.03448ZM0.517241 9.48276C0.517241 9.76845 0.748793 10 1.03448 10H7.24138C7.52707 10 7.75862 9.76845 7.75862 9.48276V2.58621H0.517241V9.48276ZM5.68965 4.13793C5.68965 3.85224 5.92121 3.62069 6.2069 3.62069C6.49259 3.62069 6.72414 3.85224 6.72414 4.13793V8.44828C6.72414 8.73397 6.49259 8.96552 6.2069 8.96552C5.92121 8.96552 5.68965 8.73397 5.68965 8.44828V4.13793ZM3.62069 4.13793C3.62069 3.85224 3.85224 3.62069 4.13793 3.62069C4.42362 3.62069 4.65517 3.85224 4.65517 4.13793V8.44828C4.65517 8.73397 4.42362 8.96552 4.13793 8.96552C3.85224 8.96552 3.62069 8.73397 3.62069 8.44828V4.13793ZM1.55172 4.13793C1.55172 3.85224 1.78328 3.62069 2.06897 3.62069C2.35466 3.62069 2.58621 3.85224 2.58621 4.13793V8.44828C2.58621 8.73397 2.35466 8.96552 2.06897 8.96552C1.78328 8.96552 1.55172 8.73397 1.55172 8.44828V4.13793Z"/>
+  </symbol>
+</svg>
+<div class="page">
+  <!--HEAER START-->
+  <script>
+    $(document).ready(function () {
+
+
+      $('.js-menu-btn').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $('.js-sidebar').toggleClass('opened');
+        $('.js-page-wrapper').toggleClass('full-width');
+      });
+
+      $('.js-profile-btn').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('.js-profile-menu').toggleClass('opened');
+      });
+
+      $('body').on('click', function () {
+        $('.js-profile-menu').removeClass('opened');
+      })
+
+      if (screen.width < 992) {
+        $('.js-sidebar').removeClass('opened');
+      }
+
+      if (screen.width > 992) {
+        $('.js-header-sidebar').on('mouseover', function () {
+          $('.js-sidebar').css({
+            'transform': 'translateX(0)'
+          });
+        });
+
+        $('.js-header-sidebar').on('mouseleave', function () {
+          $('.js-sidebar').removeAttr('style');
+        });
+      }
+    });
+  </script>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__sidebar js-header-sidebar js-adm-logo" style="background-color: #f5f5f5">
+        <a href="/adm" class="logo">
+          <img src="/userfiles/theme/logo.svg?1692343643" class="adm-logo" style="max-height: 23px">
+        </a>
+
+        <a href="#" class="menu__btn js-menu-btn">
+          <i></i>
+        </a>
+      </div>
+
+      <div class="header__wrapper">
+        <div class="header__search hide-mobile"></div>
+
+
+        <div class="header__profile">
+          <a href="#" class="profile__btn js-profile-btn">
+            <img class="profile__img" src="src/assets/images/profile_img.png" alt="">
+            Александр [esteriol]            <img class="arrow" src="src/assets/images/arrow.svg" alt="">
+          </a>
+          <div class="profile__menu js-profile-menu">
+            <a href="?table=userz&action=edit&cid=130" class="profile__menu-link">
+              <i class="fa fa-list"></i>
+              Мой аккаунт            </a>
+            <a href="/" class="profile__menu-link" target="_blank">
+              <i class="fa fa-globe"></i>
+              Открыть веб-сайт            </a>
+            <a href="?action=logout" class="profile__menu-link">
+              <i class="fa fa-sign-out-alt"></i>
+              Выйти            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page__content">
+    <div class="sidebar js-sidebar opened">
+      <div class="sidebar__nav">
+
+
+        <div class="sidebar__nav-item  ">
+          <a href="?table=dashboard"
+             class=" active">
+            <i class="fa fa-dashboard"></i>Сводка        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=orders"
+             class=" ">
+            <i class="fa fa-list"></i>Заказы        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=clients"
+             class=" ">
+            <i class="fa fa-user"></i>Клиенты        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=events"
+             class=" ">
+            <i class="fa fa-list"></i>События        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=sales"
+             class=" ">
+            <i class="fa fa-list"></i>Продажи        </a>
+
+          <!--SUBMENU PLACE-->
+          <div class="sidebar__submenu-wrapper">
+            <div class="sidebar__submenu">
+              <a href="?table=stages" class="">
+                Этапы                  </a>
+              <a href="?table=languages" class="">
+                Языки                  </a>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=support_requests"
+             class=" ">
+            <i class="fa fa-list"></i>Поддержка: Запросы        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=newsletter_subscribers"
+             class=" ">
+            <i class="fa fa-list"></i>Рассылка: подписчики        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=plans"
+             class=" ">
+            <i class="fa fa-list"></i>Тарифы        </a>
+
+          <!--SUBMENU PLACE-->
+          <div class="sidebar__submenu-wrapper">
+            <div class="sidebar__submenu">
+              <a href="?table=features" class="">
+                Характеристики                  </a>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=customer_reviews"
+             class=" ">
+            <i class="fa fa-list"></i>Отзывы        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=tickets_templates"
+             class=" ">
+            <i class="fa fa-ticket"></i>Tickets templates        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=solution_blocks"
+             class=" ">
+            <i class="fa fa-list"></i>Решение        </a>
+
+          <!--SUBMENU PLACE-->
+          <div class="sidebar__submenu-wrapper">
+            <div class="sidebar__submenu">
+              <a href="?table=solution_tickets_scanning" class="">
+                Сканирование билетов                  </a>
+              <a href="?table=solution_tickets_management" class="">
+                Управление билетами                  </a>
+              <a href="?table=solution_tickets_creation" class="">
+                Создание билетов                  </a>
+              <a href="?table=solution_api_integrations" class="">
+                API-интеграции                  </a>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item">
+          <a href="?table=content&id=1140" class="">
+            <i class="fa fa-pencil-square-o"
+               aria-hidden="true"></i>Usage example                   </a>
+
+          <div class="sidebar__submenu-wrapper"> <div class="sidebar__submenu">
+            <a href="?table=content&id=1146"
+               class="">
+              Concerts                      </a>
+
+
+            <a href="?table=content&id=1149"
+               class="">
+              Lorem                      </a>
+
+
+          </div></div>
+        </div>        <div class="sidebar__nav-item">
+        <a href="?table=content&id=1143" class="">
+          <i class="fa fa-pencil-square-o"
+             aria-hidden="true"></i>Reviews                   </a>
+
+
+      </div>        <div class="sidebar__nav-item">
+        <a href="?table=content&id=1164" class="">
+          <i class="fa fa-pencil-square-o"
+             aria-hidden="true"></i>Terms of use                   </a>
+
+
+      </div>        <div class="sidebar__nav-item">
+        <a href="?table=content&id=997" class="">
+          <i class="fa fa-pencil-square-o"
+             aria-hidden="true"></i>Privacy policy                   </a>
+
+
+      </div>        <div class="sidebar__nav-item">
+        <a href="?table=content&id=1169" class="">
+          <i class="fa fa-pencil-square-o"
+             aria-hidden="true"></i>Ticket Scanner App                   </a>
+
+
+      </div>        <div class="sidebar__nav-item">
+        <a href="?table=content&id=1167" class="">
+          <i class="fa fa-pencil-square-o"
+             aria-hidden="true"></i>Help                   </a>
+
+
+      </div>        <div class="sidebar__nav-item">
+        <a href="?table=content&id=988" class="">
+          <i class="fa fa-pencil-square-o"
+             aria-hidden="true"></i>about module                   </a>
+
+
+      </div>
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=mails"
+             class=" ">
+            <i class="fa fa-envelope"></i>Письма        </a>
+
+          <!--SUBMENU PLACE-->
+          <div class="sidebar__submenu-wrapper">
+            <div class="sidebar__submenu">
+              <a href="?table=mails_templates" class="">
+                Шаблоны писем                  </a>
+              <a href="?table=mails_variables" class="">
+                Переменные писем                  </a>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=contacts"
+             class=" ">
+            <i class="fa fa-phone"></i>Контакты        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=sections"
+             class=" ">
+            <i class="fa fa-file-text-o"></i>Редактор разделов        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=site_modules"
+             class=" ">
+            <i class="fa fa-list-alt"></i>Модули        </a>
+
+          <!--SUBMENU PLACE-->
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+        <div class="sidebar__nav-item  ">
+          <a href="?table=settings"
+             class=" ">
+            <i class="fa fa fa-cog"></i>Настройки        </a>
+
+          <!--SUBMENU PLACE-->
+          <div class="sidebar__submenu-wrapper">
+            <div class="sidebar__submenu">
+              <a href="?table=theme" class="">
+                Шаблон                  </a>
+              <a href="?table=userz" class="">
+                Пользователи                  </a>
+              <a href="?table=words2" class="">
+                Переводы                  </a>
+              <a href="?table=langs" class="">
+                Языки                  </a>
+              <a href="?table=settings_categories" class="">
+                Категории настроек                  </a>
+              <a href="?table=dev_ips" class="">
+                IP-адреса разработчиков                  </a>
+              <a href="?table=history" class="">
+                История действий                  </a>
+              <a href="?table=countries_list" class="">
+                Страны                  </a>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!--SUBMENU PLACE-->
+
+
+
+
+      </div>
+      <!--WWW Root: /home2/hotwayapp/public_html/adm/inc--><div class="module-row">
+      <!--column start-->
+      <div class="module-block-6">
+
+
+
+      </div>
+      <!--column end-->
+
+      <!--column start-->
+      <div class="module-block-6">
+
+
+
+
+      </div>
+      <!--column end-->
+    </div>
+    </div>
+    <div class="page__wrapper js-page-wrapper">
+      <div class="block__wrapper">
+        <div style="width: 100%">
+          <div>Total users: 45</div>
+          <div>Total users this month: 11</div>
+
+          <div>Total events: 30</div>
+          <div>Total events this month: 7</div>
+
+          <div>Total subscriptions: 20</div>
+          <div>Total subscriptions this month    : 5</div>
+
+          <div>Total subscribers: 1</div>
+          <div>Total subscribers this month    : 0</div>
+        </div>
+        <div class="block w-50">
+          <div class="block__head">
+            <div>
+              <div class="block__title">
+                Новые клиенты      </div>
+              <div class="block__subtitle">
+                Последние зарегистрированные      </div>
+            </div>
+          </div>
+
+          <div class="sections__grid">
+            <div class="sections__head">
+              <div class="sections__row">
+                <div class="sections__cell handler"></div>
+                <div class="sections__cell">
+                  Эл-почта        </div>
+                <div class="sections__cell">
+                  Дата рег.        </div>
+                <div class="sections__cell starting">
+                  Статус        </div>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=327">
+                  <span class="__cf_email__" data-cfemail="791e0c0a0d18131c0f0a391e14181015571a1614">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=327">
+                  18.08.2023 09:32          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=326">
+                  <span class="__cf_email__" data-cfemail="0865697a63676626787a6d6d7c4865696c6d6e677a7c60697c26677a6f">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=326">
+                  15.08.2023 15:13          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=325">
+                  <span class="__cf_email__" data-cfemail="12747d7d66707d7e717b79527b7c707d6a3c7e64766678">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=325">
+                  15.08.2023 13:29          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link ">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=324">
+                  <span class="__cf_email__" data-cfemail="d2b4bdbda6b0bdbeb1bbb992bbbcb0bdaafcbea4b5b7b5b7b3">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=324">
+                  15.08.2023 13:21          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link ">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=294">
+                  <span class="__cf_email__" data-cfemail="157760717e70637c767d242c2c2d5578747c793b6760">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=294">
+                  11.08.2023 12:32          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=282">
+                  <span class="__cf_email__" data-cfemail="deb2abbdbfbdbbacb1a8bfa4eeea9eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=282">
+                  08.08.2023 03:11          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=281">
+                  <span class="__cf_email__" data-cfemail="dfbdaab2baadbdb2a8ea9fb8b2beb6b3f1bcb0b2">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=281">
+                  07.08.2023 23:45          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link ">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=280">
+                  <span class="__cf_email__" data-cfemail="c0a480a6eeb6">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=280">
+                  07.08.2023 20:41          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link ">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=279">
+                  <span class="__cf_email__" data-cfemail="b3daddd5dcf3d6c0c7d6c1dadcdf9dd0dcde">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=279">
+                  01.08.2023 12:14          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=277">
+                  <span class="__cf_email__" data-cfemail="50263933103523243522393f3c7e3c26">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=277">
+                  01.08.2023 11:51          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="block w-50">
+          <div class="block__head">
+            <div>
+              <div class="block__title">
+                События      </div>
+              <div class="block__subtitle">
+                New events      </div>
+            </div>
+          </div>
+
+          <div class="sections__grid">
+            <div class="sections__head">
+              <div class="sections__row">
+                <div class="sections__cell">
+                  ID        </div>
+                <div class="sections__cell">
+                  Event name        </div>
+                <div class="sections__cell starting">
+                  Tickets        </div>
+                <div class="sections__cell starting">
+                  Добавлен        </div>
+              </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #175        </div>
+
+              <div class="sections__cell ">
+                aa22        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                17.08.2023 12:55        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #174        </div>
+
+              <div class="sections__cell ">
+                aastew        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                17.08.2023 12:52        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #173        </div>
+
+              <div class="sections__cell ">
+                Holiday        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                17.08.2023 12:50        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #172        </div>
+
+              <div class="sections__cell ">
+                Test 34        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                17.08.2023 12:29        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #171        </div>
+
+              <div class="sections__cell ">
+                test        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                17.08.2023 12:14        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #170        </div>
+
+              <div class="sections__cell ">
+                Test2        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                17.08.2023 12:00        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #169        </div>
+
+              <div class="sections__cell ">
+                Holiday Fest        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                17.08.2023 11:59        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #168        </div>
+
+              <div class="sections__cell ">
+                test        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                15.08.2023 17:00        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #167        </div>
+
+              <div class="sections__cell ">
+                geeg        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                15.08.2023 16:59        </div>
+            </div>
+            <div class=" sections__row ">
+              <div class="sections__cell ">
+                #166        </div>
+
+              <div class="sections__cell ">
+                event        </div>
+
+              <div class="sections__cell starting">
+                0        </div>
+
+              <div class="sections__cell starting">
+                15.08.2023 16:58        </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="block w-50">
+          <div class="block__head">
+            <div>
+              <div class="block__title">
+                Клиенты      </div>
+              <div class="block__subtitle">
+                Active clients      </div>
+            </div>
+          </div>
+
+          <div class="sections__grid">
+            <div class="sections__head">
+              <div class="sections__row">
+                <div class="sections__cell handler"></div>
+                <div class="sections__cell">
+                  Эл-почта        </div>
+                <div class="sections__cell">
+                  Last active        </div>
+                <div class="sections__cell starting">
+                  Статус        </div>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=203">
+                  <span class="__cf_email__" data-cfemail="ccaaa3a3b8aea3a0afa5a78ca5a2aea3b4e2a0ba">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=203">
+                  18.08.2023 10:20          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=18">
+                  <span class="__cf_email__" data-cfemail="7f0c183f1a0c0b1a0d161013511c1012">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=18">
+                  18.08.2023 10:12          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=327">
+                  <span class="__cf_email__" data-cfemail="90f7e5e3e4f1faf5e6e3d0f7fdf1f9fcbef3fffd">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=327">
+                  18.08.2023 10:00          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=3">
+                  <span class="__cf_email__" data-cfemail="710514020531051402055f121e1c">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=3">
+                  17.08.2023 11:46          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=279">
+                  <span class="__cf_email__" data-cfemail="2d44434b426d485e59485f444241034e4240">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=279">
+                  15.08.2023 16:13          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=326">
+                  <span class="__cf_email__" data-cfemail="8be6eaf9e0e4e5a5fbf9eeeeffcbe6eaefeeede4f9ffe3eaffa5e4f9ec">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=326">
+                  15.08.2023 15:14          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=208">
+                  <span class="__cf_email__" data-cfemail="a6c7d4d2d3d4d588cdd4d3d5d2d5e6c3d5d2c3d4cfc9ca88c5c9cb97979494">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=208">
+                  15.08.2023 13:45          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=282">
+                  <span class="__cf_email__" data-cfemail="cca0b9afadafa9bea3baadb6fcf88caba1ada5a0e2afa3a1">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=282">
+                  14.08.2023 09:37          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=266">
+                  <span class="__cf_email__" data-cfemail="036c6f66642d706b6c7568766d4366707766716a6c6f2d606c6e">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=266">
+                  -          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+            <div class="sections__row">
+              <div class="sections__cell handler"></div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=273">
+                  <span class="__cf_email__" data-cfemail="50203122233831616264616410373d31393c7e333f3d">[email&#160;protected]</span>          </a>
+              </div>
+              <div class="sections__cell">
+                <a href="?table=clients&action=edit&cid=273">
+                  -          </a>
+              </div>
+              <div class="sections__cell starting">
+            <span
+                class="starting__link active">
+              <svg class="icon">
+                <use xlink:href="#check-mark"></use>
+              </svg>
+            </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // $(document).ready(function () {
+        //   $('#items_table_dash').DataTable({
+        //     "aaSorting": []
+        //   });
+        // });
+      </script>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="template js-template opened">
+    <a href="#" class="template__close js-close-template"></a>
+    <div class="template__content">
+      <div class="label">
+        Template variables
+      </div>
+      <div class="form__group">
+        <div class="label">
+          Subject                  </div>
+        <input type="text" name="subject_10" value="Invitation" class="input" autocomplete="off">
+      </div>
+      <div class="form__group">
+        <div class="label">
+          Body
+        </div>
+        <textarea name="body_10" class="textarea ckeditor" rows="7" ></textarea>
+      </div>
+      <button class="btn btn--main" name="save_unit_data" type="submit">
+        <i class="fas fa-circle-notch fa-spin js-form-spinner" style="display: none; margin-right: 5px"></i>
+        Сохранить
+      </button>
+    </div>
+  </div>
+
+  <script>
+    $('.js-close-template').on('click', function (e){
+      e.preventDefault();
+      $('.js-template').removeClass('opened')
+    })
+  </script>
+
+</div>
+
+<!-- FANCYBOX -->
+<link rel="stylesheet" href="/inc/fancybox/jquery.fancybox.css?1692343643">
+<script type="text/javascript"
+        src="/inc/fancybox/jquery.fancybox.js?1692343643"></script>
+<script type="text/javascript"
+        src="/inc/fancybox/jquery.mousewheel-3.0.6.pack.js?1692343643"></script>
+<script type="text/javascript"
+        src="/inc/fancybox/jquery.fancybox-media.js?1692343643"></script>
+<script type="text/javascript"
+        src="/inc/fancybox/fancy-init.js?1692343643"></script>
+<!-- FANCYBOX -->
+
+<script src="//cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+<script>
+  $.extend(true, $.fn.dataTable.defaults, {
+    language: {
+      url: '//cdn.datatables.net/plug-ins/1.12.1/i18n/ru.json'
+    },
+  })
+</script>
+
+<!--CONTENT END-->
+<!-- Directory: /home2/hotwayapp/public_html/adm -->
+</body>
+</html>

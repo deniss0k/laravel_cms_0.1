@@ -1,0 +1,159 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: $white;
+  overflow: hidden;
+}
+
+.header__container {
+  height: 9rem;
+  display: flex;
+  align-items: center;
+}
+
+
+.header__wrapper {
+  height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem 0 4rem;
+  flex: 1;
+}
+
+.header__sidebar {
+  padding: 0 2.5rem;
+  width: 25rem;
+  height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -10%;
+    bottom: -10%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+  }
+
+  .logo {
+    line-height: 1;
+    img {
+      height: 5rem;
+    }
+  }
+}
+
+
+.header__search {
+  max-width: 45rem;
+  width: 100%;
+  position: relative;
+
+  .input {
+    padding-left: 6rem;
+    border: 0;
+    border-radius: 3rem;
+    background-color: #F8F8F8;
+  }
+}
+
+.search__form {
+  width: 100%;
+}
+
+.search__btn {
+  position: absolute;
+  top: 50%;
+  left: 1.4rem;
+  transform: translateY(-50%);
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+}
+
+.profile__btn {
+  padding-left: .6rem;
+  padding-right: 3rem;
+  height: 5rem;
+  min-width: 21.5rem;
+  border-radius: 3rem;
+  background-color: #F8F8F8;
+  display: flex;
+  align-items: center;
+  color: $black;
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.4rem;
+  }
+}
+
+.profile__img {
+  margin-right: 1.5rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header__profile {
+}
+
+.profile__menu {
+  padding: 1rem 0;
+  position: fixed;
+  top: 10rem;
+  right: 2.5rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 20.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 2rem rgba(0,0,0,.15);
+  transform: translateY(1rem);
+  transition: all .2s ease;
+  opacity: 0;
+  visibility: hidden;
+
+  &.opened {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.profile__menu-link {
+  color: #A4A4A4;
+  padding: 1rem 2rem;
+  transition: all .2s ease;
+
+  i {
+    margin-right: .4rem;
+    width: 2rem;
+  }
+
+  &:hover {
+    background-color: #f8f8f8;
+    text-decoration: none;
+    color: $black;
+  }
+}

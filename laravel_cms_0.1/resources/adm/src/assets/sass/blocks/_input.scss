@@ -1,0 +1,173 @@
+/* 10. Inputs & textarea
+=========================*/
+
+$input-height: 36px;
+$input-padding: .5em .9em;
+$input-color: $black;
+$input-font-size: 1em;
+$input-line-height: 1;
+$input-shadow-default: inset 0 1px 4px rgba(0, 0, 0, .2);
+$input-placeholder-color: lighten($gray, 20%);
+$input-bg: $white;
+$input-bg-focus: lighten($light-blue, 48%);
+
+$input-icon-color: $gray;
+$input-icon-color-focus: $black;
+
+$input-label-bg: darken($light-gray, 5%);
+$input-label-padding: .38em .9em;
+$input-label-font-size: 1em;
+$input-label-line-height: 1.4;
+$input-label-color: lighten($black, 10%);
+
+/* Styling */
+$input-style-rounded: .4rem;
+$input-style-ellipse: $input-height / 2;
+$input-style-shadow: 1px 1px .3em rgba(0, 0, 0, .2);
+
+/* States */
+$input-error: $red;
+$input-success: $green;
+
+.input {
+  height: 5rem;
+  font-size: 1.5rem;
+  padding: .6rem 1.5rem .6rem 1.5rem;
+  vertical-align: middle;
+  color: $black;
+  font-family: inherit;
+
+  transition: background-color .1s linear;
+  width: 100%;
+  border-radius: .6rem;
+  border: 1px solid #D9D9D9;
+  background-color: #fff;
+
+  &:focus {
+    outline: 0;
+    border-color: $main;
+  }
+
+  &::placeholder {
+    color: #9C9C9C;
+  }
+
+  /* Styling */
+  &--rounded {
+    border-radius: $input-style-rounded;
+  }
+
+  &--ellipse {
+    border-radius: 2.4rem;
+  }
+
+  &--shadow {
+    box-shadow: $input-style-shadow;
+  }
+
+  &--slide {
+
+    &::placeholder {
+      transition: padding-left .3s linear;
+    }
+
+    &:focus::placeholder {
+      padding-left: 150%;
+    }
+  }
+
+  &--fade {
+
+    &::placeholder {
+      transition: opacity .2s linear;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+
+  /* States */
+  &--error {
+    @include input-state($input-error);
+  }
+
+  &--success {
+    @include input-state($input-success);
+  }
+
+  &.error {
+    @include input-state($input-error);
+  }
+
+  &.success {
+    @include input-state($input-error);
+  }
+
+  &--inline {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+  }
+
+  &--search {
+    border-radius: 5px;
+    border: 1px solid #c6c6cc;
+    background-color: $white;
+    box-shadow: none;
+    min-height: unset;
+    padding: .4em 2em .4em .9em
+  }
+
+  &--number {
+    width: 8rem;
+  }
+}
+
+.input__wrapper {
+  position: relative;
+
+  &--label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .label {
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+
+    .btn {
+      margin-bottom: 0;
+    }
+  }
+
+  &--icon-before {
+    .input {
+      padding-left: 2.1em;
+    }
+
+    .input__icon {
+      left: .7em;
+    }
+  }
+
+  &--icon-after {
+    .input {
+      padding-right: 2.1em;
+    }
+
+    .input__icon {
+      right: .7em;
+    }
+  }
+
+  &--icon-before,
+  &--icon-after {
+    .input {
+      &:focus + .input__icon {
+        color: $input-icon-color-focus;
+      }
+    }
+  }
+}

@@ -8,6 +8,9 @@
       <sourceFolder url="file://$MODULE_DIR$/laravel_cms_0.1/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/laravel_cms_0.1/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/laravel_cms_0.1/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/laravel_cms_0.1/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/laravel_cms_0.1/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />

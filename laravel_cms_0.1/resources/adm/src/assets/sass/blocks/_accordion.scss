@@ -1,0 +1,128 @@
+/* 22. Accordion
+=========================*/
+$accordion-bg: $white;
+$accordion-border-color: lighten($gray, 20%);
+$accordion-border: 1px solid $accordion-border-color;
+
+/* Title */
+$accordion-title-padding: .5em 2em .5em 2.1em;
+$accordion-title-font-size: 1em;
+$accordion-title-line-height: 1.2;
+$accordion-title-font-weight: bold;
+$accordion-title-color: $gray;
+$accordion-title-color-active: $black;
+$accordion-title-color-hover: $black;
+
+/* Title Icon */
+$accordion-title-icon: "\f105";
+$accordion-title-icon-active: "\f107";
+$accordion-title-icon-font-size: 1em;
+$accordion-title-icon-line-height: 1;
+$accordion-title-icon-top: 50%;
+$accordion-title-icon-left: 1em;
+$accordion-title-icon-zindex: 1;
+$accordion-title-icon-margin-top: - $accordion-title-icon-font-size / 2;
+
+/* Content */
+$accordion-content-font-size: 1em;
+$accordion-content-color: $black;
+$accordion-content-padding: .5em 1em 1em;
+
+/* Dark theme */
+$accordion-bg-dark: $black;
+$accordion-border-color-dark: $real-black;
+$accordion-title-color-dark: $gray;
+$accordion-title-color-dark-hover: $white;
+$accordion-title-color-dark-active: $yellow;
+$accordion-content-color-dark: $white;
+
+/* Styling */
+$accordion-rounded: .3em;
+$accordion-shadow: 0 0 .3em rgba(0, 0, 0, .3);
+
+
+.accordion {
+
+}
+
+.accordion__item {
+
+
+  &.active {
+
+    .accordion__title {
+      color: $black;
+
+      &:before {
+        content: '\f068';
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.accordion__title {
+  font-size: 1.8rem;
+  line-height: $accordion-title-line-height;
+  font-weight: 500;
+  color: $black;
+
+  position: relative;
+
+  &:before {
+    content: '\f067';
+    font-size: 1.4rem;
+    line-height: $accordion-title-icon-line-height;
+    font-family: fontAwesome;
+    color: $black;
+    position: absolute;
+    top: $accordion-title-icon-top;
+    left: $accordion-title-icon-left;
+    z-index: $accordion-title-icon-zindex;
+    margin-top: $accordion-title-icon-margin-top;
+
+    transition: color .1s linear;
+  }
+
+  &:hover {
+
+    &:before {
+      color: inherit;
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding: $accordion-title-padding;
+
+    color: inherit;
+
+    transition: color .1s linear;
+
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.accordion__content {
+  padding: 1rem 1rem 1rem 4rem;
+  position: relative;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: $black;
+
+  p {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
