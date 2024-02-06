@@ -9,6 +9,6 @@ export default defineConfig({
         }),
     ],
     build: {
-        outDir: 'public/adm',
+        outDir: 'public/assets/adm',
     },
 });
