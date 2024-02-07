@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Models\Module;
 use App\Models\Section;
 use Illuminate\Support\Facades\Route;
@@ -16,16 +17,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 $ADMIN_FOLDER = config('constants.ADMIN_FOLDER');
+$controllersPath = 'App\Http\Controllers';
 
-Route::prefix($ADMIN_FOLDER)->group(function () {
+Route::prefix($ADMIN_FOLDER)->group(function () use ($controllersPath) {
+    Route::get('/{slug}', function (string $slug) use ($controllersPath) {
+        $module = Module::where('slug', $slug)->first()
+            ?? abort(404);
+        $controller = app("$controllersPath\Admin\\$module->controller");
+        return $controller->index($module);
+    });
+});
 
-    $modules = Module::all();
-
+Route::prefix($ADMIN_FOLDER)->group(function () use ($controllersPath, $modules) {
+    // Define a resource route for each module
     foreach ($modules as $module) {
-        if ($module->main === 1) {
-            Route::get("/", "App\Http\Controllers\Admin\\$module->controller@index")->name($module->name);
-        }
-        Route::get("/$module->slug", "App\Http\Controllers\Admin\\$module->controller@index")->name($module->name)->where('module', $module->id);
+        $controller = "$controllersPath\Admin\\$module->controller";
+        Route::resource($module->slug, $controller);
     }
 });
 

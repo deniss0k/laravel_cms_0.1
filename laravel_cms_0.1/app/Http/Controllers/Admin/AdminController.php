@@ -12,7 +12,7 @@ class AdminController extends Controller
         return view('adm.dashboard');
     }
 
-    public function users()
+    public function show($slug)
     {
         return view('adm.users');
     }

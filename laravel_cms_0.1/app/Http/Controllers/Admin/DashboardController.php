@@ -11,12 +11,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $route = Route::current();
+        $slug = Route::current()->parameter('slug');
+        $module = Module::where('slug', $slug)->first();
 
-        $moduleSlug = $route->parameter('module_slug');
-
-        $module = Module::where('slug', $moduleSlug)->first();
-
-        return view('adm.dashboard', ['module' => $route]);
+        return view('adm.dashboard', ['module' => $module]);
     }
 }
