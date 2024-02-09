@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\adm\AdminController;
 use App\Models\Module;
 use App\Models\Section;
 use Illuminate\Support\Facades\Route;
@@ -16,22 +16,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-$ADMIN_FOLDER = config('constants.ADMIN_FOLDER');
+define('ADMIN_FOLDER', config('constants.ADMIN_FOLDER'));
+
 $controllersPath = 'App\Http\Controllers';
 
-Route::prefix($ADMIN_FOLDER)->group(function () use ($controllersPath) {
-    Route::get('/{slug}', function (string $slug) use ($controllersPath) {
-        $module = Module::where('slug', $slug)->first()
-            ?? abort(404);
-        $controller = app("$controllersPath\Admin\\$module->controller");
-        return $controller->index($module);
-    });
-});
+//Route::prefix($ADMIN_FOLDER)->group(function () use ($controllersPath) {
+//    Route::get('/{slug}', function (string $slug) use ($controllersPath) {
+//        $module = Module::where('slug', $slug)->first()
+//            ?? abort(404);
+//        $controller = app("$controllersPath\Admin\\$module->controller");
+//        return $controller->index($module);
+//    });
+//});
 
-Route::prefix($ADMIN_FOLDER)->group(function () use ($controllersPath, $modules) {
-    // Define a resource route for each module
+$modules = Module::all();
+
+Route::prefix(ADMIN_FOLDER)->name('adm.')->group(function () use ($controllersPath, $modules) {
     foreach ($modules as $module) {
-        $controller = "$controllersPath\Admin\\$module->controller";
+        $controller = "$controllersPath\\" . ADMIN_FOLDER . "\\$module->controller";
         Route::resource($module->slug, $controller);
     }
 });
@@ -40,7 +42,7 @@ $sections = Section::all();
 
 foreach ($sections as $section) {
     if ($section->main === 1) {
-        Route::get("/", "App\Http\Controllers\Site\\$section->controller@index")->name($section->name);
+        Route::get("/", "App\Http\Controllers\\$section->controller@index")->name($section->slug);
     }
-    Route::get("$section->slug", "App\Http\Controllers\Site\\$section->controller@index")->name($section->name);
+    Route::get("$section->slug", "App\Http\Controllers\\$section->controller@index")->name($section->slug);
 }

@@ -1,25 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\adm;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SectionRequest;
 use App\Models\Module;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class SectionsController extends Controller
 {
-    protected Module $module;
-
-    public function __construct(Module $module)
-    {
-        $this->module = $module;
-    }
-
-    public function __invoke(Request $request)
-    {
-        return $this->index();
-    }
-
     /**
      * Display a listing of the resource.
      */
@@ -31,17 +21,19 @@ class SectionsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Module $module)
     {
-        //
+        return view('adm.sections.create', ['module' => $module]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SectionRequest $request): \Illuminate\Http\RedirectResponse
     {
-        //
+        $record = Section::create($request->validated());
+
+        return redirect()->route('adm.sections.edit', $record);
     }
 
     /**
@@ -55,9 +47,9 @@ class SectionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Section $record)
     {
-        //
+        return view('adm.sections.edit', ['record' => $record]);
     }
 
     /**

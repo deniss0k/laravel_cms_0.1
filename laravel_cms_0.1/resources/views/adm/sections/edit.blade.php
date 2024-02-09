@@ -2,5 +2,5 @@
 @section('title', $module->name)
 
 @section('content')
-    @include('adm.sections.form')
+    @include('adm.sections.form', ['record', $record])
 @endsection
